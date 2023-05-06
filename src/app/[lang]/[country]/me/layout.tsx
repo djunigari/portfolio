@@ -6,15 +6,15 @@ interface AppLayoutProps {
 
 export const metadata = {
   title: {
-    default: 'Aplicação',
-    template: '%s | Alexandre Djun Igari',
+    default: 'Alexandre D. Igari',
+    template: '%s | Alexandre D. Igari',
   },
 }
 
 export default function AppLayout({ children }: AppLayoutProps) {
   return (
     <div>
-      <h1>App</h1>
+      <h1>Alexandre Djun Igari</h1>
       {children}
     </div>
   )

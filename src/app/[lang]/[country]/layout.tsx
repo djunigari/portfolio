@@ -1,6 +1,11 @@
 import { ReactNode } from 'react'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { TopMenu } from '@/components/Menu/TopMenu'
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'de' }]
+}
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,6 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <TopMenu />
         <h1>Teste</h1>
         {children}
       </body>

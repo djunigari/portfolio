@@ -12,6 +12,7 @@
     "@types/node": "20.0.0",
     "@types/react": "18.2.5",
     "@types/react-dom": "18.2.4",
+    "accept-language-parser": "^1.5.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.39.0",
     "eslint-config-next": "13.4.1",
@@ -23,6 +24,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@rocketseat/eslint-config": "^1.2.0"
+    "@rocketseat/eslint-config": "^1.2.0",
+    "@types/accept-language-parser": "^1.5.3"
   }
 }
