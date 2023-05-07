@@ -1,7 +1,11 @@
-import { ValidLocale, getLocalePartsFrom, getTranslator, locales } from '@/i18n'
+import { getTranslator } from '@/i18n'
+import { locales } from '@/interfaces/internationalization'
 
 export async function generateStaticParams() {
-  return locales.map((locale) => getLocalePartsFrom({ locale }))
+  return locales.map(({ language, country }) => ({
+    lang: language,
+    country,
+  }))
 }
 
 export default async function ExamplePage({
@@ -10,7 +14,7 @@ export default async function ExamplePage({
   params: { lang: string; country: string }
 }) {
   const translate = await getTranslator(
-    `${params.lang}-${params.country.toUpperCase()}` as ValidLocale, // our middleware ensures this is valid
+    `${params.lang}-${params.country.toUpperCase()}`, // our middleware ensures this is valid
   )
   return (
     <div>
