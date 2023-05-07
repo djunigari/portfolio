@@ -1,19 +1,21 @@
 interface PostProps {
   params: {
     slug: string
+    lang: string
+    country: string
   }
 }
 
-type Props = {
-  params: { slug: string }
-}
-
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: PostProps) {
   return {
     title: `Post ${params.slug}`,
   }
 }
 
 export default function Post({ params }: PostProps) {
-  return <h1>Post: {params.slug}</h1>
+  return (
+    <>
+      <h1>Post: {params.slug}</h1>
+    </>
+  )
 }

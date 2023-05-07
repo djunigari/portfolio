@@ -1,5 +1,5 @@
 import { User } from '@/components/User'
-import { ValidLocale, getTranslator } from '@/i18n'
+import { getTranslator } from '@/i18n'
 import { Suspense } from 'react'
 
 export default async function Home({
@@ -8,7 +8,7 @@ export default async function Home({
   params: { lang: string; country: string }
 }) {
   const translate = await getTranslator(
-    `${params.lang}-${params.country.toUpperCase()}` as ValidLocale, // our middleware ensures this is valid
+    `${params.lang}-${params.country.toUpperCase()}`, // our middleware ensures this is valid
   )
 
   return (

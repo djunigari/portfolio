@@ -1,40 +1,14 @@
-export const defaultLang = 'en'
-export const defaultCountry = 'US'
-export const defaultLocale = `${defaultLang}-${defaultCountry}`
-export const locales = ['en-US', 'en-CA', 'fr-CA'] as const
+import { defaultLocale } from './interfaces/internationalization'
 
-// https://nextjs.org/docs/app/building-your-application/routing/internationalization
-// https://dev.to/ajones_codes/the-ultimate-guide-to-internationalization-i18n-in-nextjs-13-ed0
-export type ValidLocale = (typeof locales)[number]
-
-type PathnameLocale = {
-  pathname: string
-  locale?: never
-}
-type ISOLocale = {
-  pathname?: never
-  locale: string
-}
-
-type LocaleSource = PathnameLocale | ISOLocale
-
-export const getLocalePartsFrom = ({ pathname, locale }: LocaleSource) => {
-  if (locale) {
-    const localeParts = locale.toLowerCase().split('-')
-    return {
-      lang: localeParts[0],
-      country: localeParts[1],
-    }
-  } else {
-    const pathnameParts = pathname!.toLowerCase().split('/')
-    return {
-      lang: pathnameParts[1],
-      country: pathnameParts[2],
-    }
+export const getLocalePartsFrom = (pathname: string) => {
+  const pathnameParts = pathname!.toLowerCase().split('/')
+  return {
+    lang: pathnameParts[1],
+    country: pathnameParts[2],
   }
 }
 
-const dictionaries: Record<ValidLocale, any> = {
+const dictionaries: Record<string, any> = {
   'en-US': () =>
     import('./dictionaries/en-US.json').then((module) => module.default),
   'en-CA': () =>
@@ -43,8 +17,12 @@ const dictionaries: Record<ValidLocale, any> = {
     import('./dictionaries/fr-CA.json').then((module) => module.default),
 } as const
 
-export const getTranslator = async (locale: ValidLocale) => {
-  const dictionary = await dictionaries[locale]()
+export const getTranslator = async (locale: string) => {
+  // if dictionary do not exist set dictionary to default
+  const dictionary =
+    (dictionaries[locale] && (await dictionaries[locale]())) ||
+    (await dictionaries[defaultLocale.code]())
+
   return (key: string, params?: { [key: string]: string | number }) => {
     let translation = key
       .split('.')
