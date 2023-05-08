@@ -42,6 +42,13 @@ function isPathnameMissingLocale(pathname: string) {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
+  // ignore /public folder
+  if (pathname.startsWith('/public')) {
+    return NextResponse.rewrite(
+      new URL(pathname.replace('/public', ''), request.url),
+    )
+  }
+
   const { lang: currentLang, country: currentCountry } =
     getLocalePartsFrom(pathname)
 

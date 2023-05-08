@@ -1,6 +1,6 @@
+import { TopMenu } from '@/components/Menu/TopMenu'
 import { ReactNode } from 'react'
 import './globals.css'
-import { TopMenu } from '@/components/Menu/TopMenu'
 import { ThemeSwitch } from '@/components/Theme/ThemeSwitch'
 
 export const metadata = {
