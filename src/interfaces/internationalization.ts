@@ -1,12 +1,23 @@
+import brFlag from '../../public/images/country-flags/br.svg'
+import jpFlag from '../../public/images/country-flags/jp.svg'
+import usFlag from '../../public/images/country-flags/us.svg'
+
 class Locale {
   displayName: string
   language: string
   country: string
+  imageUrl: string
 
-  constructor(displayName: string, language: string, country: string) {
+  constructor(
+    displayName: string,
+    language: string,
+    country: string,
+    imageUrl: any,
+  ) {
     this.displayName = displayName
     this.language = language
     this.country = country
+    this.imageUrl = imageUrl
   }
 
   get code() {
@@ -15,9 +26,9 @@ class Locale {
 }
 
 export const locales: Locale[] = [
-  new Locale('English', 'en', 'US'),
-  new Locale('Português', 'pt', 'BR'),
-  new Locale('日本語', 'ja', 'JP'),
+  new Locale('English', 'en', 'US', usFlag),
+  new Locale('Português', 'pt', 'BR', brFlag),
+  new Locale('日本語', 'ja', 'JP', jpFlag),
 ]
 export const defaultLocale = locales[0]
 

@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
 // https://www.joshwcomeau.com/snippets/react-hooks/use-sticky-state/
-export default function useStickyState(
-  defaultValue: string | undefined,
+export default function useStickyState<T>(
+  defaultValue: T | undefined,
   key: string,
-): [string | undefined, (v: string) => void] {
-  const [value, setValue] = useState<string | undefined>(defaultValue)
+): [T | undefined, Dispatch<SetStateAction<T | undefined>>] {
+  const [value, setValue] = useState<T | undefined>(defaultValue)
 
   useEffect(() => {
     const stickyValue = localStorage.getItem(key)
     if (stickyValue !== null) {
-      setValue(stickyValue)
+      setValue(JSON.parse(stickyValue) as T)
     }
   }, [key, setValue])
 
   return [
     value,
     (v) => {
-      localStorage.setItem(key, v)
+      localStorage.setItem(key, JSON.stringify(v))
       setValue(v)
     },
   ]
