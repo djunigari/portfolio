@@ -1,4 +1,7 @@
 {
+  "language": {
+    "chooseLanguage": "Choose your language"
+  },
   "welcome": {
     "helloWorld": "Hello World!",
     "happyYear": "Happy { year }!"

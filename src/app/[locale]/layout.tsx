@@ -32,7 +32,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className="theme-dark theme-green h-screen">
+      <body className="theme-dark theme-gray h-screen bg-primaryBg text-onPrimaryBg">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <TopMenu />
           <h1>Teste</h1>

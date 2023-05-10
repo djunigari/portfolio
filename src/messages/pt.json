@@ -1,6 +1,9 @@
 {
+  "language": {
+    "chooseLanguage": "Escolha seu idioma"
+  },
   "welcome": {
-    "helloWorld": "Salut le Monde!",
+    "helloWorld": "Bem Vindo!",
     "happyYear": "Bonne année { year }!"
   }
 }

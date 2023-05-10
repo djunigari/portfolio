@@ -1,11 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-function withOpacity(variableName) {
-  return ({ opacityValue }) => {
-    return `rgba(var(${variableName}), ${opacityValue || 1})`
-  }
-}
-
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
@@ -16,32 +10,22 @@ module.exports = {
   ],
   theme: {
     extend: {
-      textColor: {
-        skin: {
-          base: withOpacity('--color-text-base'),
-          muted: withOpacity('--color-text-muted'),
-          inverted: withOpacity('--color-text-inverted'),
-        },
-      },
-      backgroundColor: {
-        skin: {
-          fill: withOpacity('--color-fill'),
-          'button-accent': withOpacity('--color-button-accent'),
-          'button-accent-hover': withOpacity('--color-button-accent-hover'),
-          'button-muted': withOpacity('--color-button-muted'),
-        },
-      },
-      gradientColorStops: {
-        skin: {
-          hue: withOpacity('--color-fill'),
-        },
-      },
       colors: {
-        onNeutralBg: 'var(--onNeutralBg)',
-        neutralBg: 'var(--neutralBg)',
-        onPrimaryBg: 'var(--onPrimaryBg)',
         primaryBg: 'var(--primaryBg)',
+        onPrimaryBg: 'var(--onPrimaryBg)',
+        base: 'var(--base)',
+        muted: 'var(--muted)',
+        accent: 'var(--accent)',
+        inverted: 'var(--inverted)',
+        vivid: 'var(--vivid)',
         primary: 'var(--primary)',
+        second: 'var(--second)',
+        fill: 'var(--fill)',
+        cancel: 'var(--cancel)',
+        reset: 'var(--reset)',
+        submit: 'var(--submit)',
+        warning: 'var(--warning)',
+        alert: 'var(--alert)',
       },
     },
   },

@@ -25,12 +25,11 @@ class Locale {
   }
 }
 
-export const locales: Locale[] = [
+export const locales = [
   new Locale('English', 'en', 'US', usFlag),
   new Locale('Português', 'pt', 'BR', brFlag),
-  new Locale('日本語', 'ja', 'JP', jpFlag),
+  new Locale('日本語', 'jp', 'JP', jpFlag),
 ]
-export const defaultLocale = locales[0]
 
 // https://nextjs.org/docs/app/building-your-application/routing/internationalization
 // https://dev.to/ajones_codes/the-ultimate-guide-to-internationalization-i18n-in-nextjs-13-ed0

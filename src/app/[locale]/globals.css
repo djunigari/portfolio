@@ -4,64 +4,20 @@
 
 @layer base {
   :root {
-    --color-neutral-50: theme('colors.gray.50');
-    --color-neutral-100: theme('colors.gray.100');
-    --color-neutral-200: theme('colors.gray.200');
-    --color-neutral-300: theme('colors.gray.300');
-    --color-neutral-400: theme('colors.gray.400');
-    --color-neutral-500: theme('colors.gray.500');
-    --color-neutral-600: theme('colors.gray.600');
-    --color-neutral-700: theme('colors.gray.700');
-    --color-neutral-800: theme('colors.gray.800');
-    --color-neutral-900: theme('colors.gray.900');
-    --color-text-base: 255, 255, 255;
-    --color-text-muted: 199, 210, 254;
-    --color-text-inverted: 79, 70, 229;
-    --color-fill: 67, 56, 202;
-    --color-button-accent: 255, 255, 255;
-    --color-button-accent-hover: 238, 242, 255;
-    --color-button-muted: 99, 102, 241;
   }
 }
 
-.theme-green {
-  --color-primary-50: theme('colors.green.50');
-  --color-primary-100: theme('colors.green.100');
-  --color-primary-200: theme('colors.green.200');
-  --color-primary-300: theme('colors.green.300');
-  --color-primary-400: theme('colors.green.400');
-  --color-primary-500: theme('colors.green.500');
-  --color-primary-600: theme('colors.green.600');
-  --color-primary-700: theme('colors.green.700');
-  --color-primary-800: theme('colors.green.800');
-  --color-primary-900: theme('colors.green.900');
-  --color-text-base: 17, 24, 2;
-  --color-text-muted: 47, 67, 6;
-  --color-text-inverted: 235, 250, 204;
-  --color-fill: 179, 255, 23;
-  --color-button-accent: 36, 52, 3;
-  --color-button-accent-hover: 55, 79, 5;
-  --color-button-muted: 212, 255, 122;
-}
-
-.theme-red {
-  --color-primary-50: theme('colors.red.50');
-  --color-primary-100: theme('colors.red.100');
-  --color-primary-200: theme('colors.red.200');
-  --color-primary-300: theme('colors.red.300');
-  --color-primary-400: theme('colors.red.400');
-  --color-primary-500: theme('colors.red.500');
-  --color-primary-600: theme('colors.red.600');
-  --color-primary-700: theme('colors.red.700');
-  --color-primary-800: theme('colors.red.800');
-  --color-primary-900: theme('colors.red.900');
-  --color-text-base: 255, 255, 255;
-  --color-text-muted: 254, 202, 202;
-  --color-text-inverted: 220, 38, 38;
-  --color-fill: 185, 28, 28;
-  --color-button-accent: 255, 255, 255;
-  --color-button-accent-hover: 254, 242, 242;
-  --color-button-muted: 239, 68, 68;
+.theme-gray {
+  --color-primary-50: theme('colors.gray.50');
+  --color-primary-100: theme('colors.gray.100');
+  --color-primary-200: theme('colors.gray.200');
+  --color-primary-300: theme('colors.gray.300');
+  --color-primary-400: theme('colors.gray.400');
+  --color-primary-500: theme('colors.gray.500');
+  --color-primary-600: theme('colors.gray.600');
+  --color-primary-700: theme('colors.gray.700');
+  --color-primary-800: theme('colors.gray.800');
+  --color-primary-900: theme('colors.gray.900');
 }
 
 .theme-blue {
@@ -75,27 +31,40 @@
   --color-primary-700: theme('colors.blue.700');
   --color-primary-800: theme('colors.blue.800');
   --color-primary-900: theme('colors.blue.900');
-  --color-text-base: 255, 255, 255;
-  --color-text-muted: 254, 202, 202;
-  --color-text-inverted: 220, 38, 38;
-  --color-fill: 185, 28, 28;
-  --color-button-accent: 255, 255, 255;
-  --color-button-accent-hover: 254, 242, 242;
-  --color-button-muted: 239, 68, 68;
 }
 
 .theme-light {
-  --neutralBg: theme('colors.white');
-  --onNeutralBg: var(--color-neutral-900);
-  --primaryBg: var(--color-primary-100);
+  --primaryBg: var(--color-primary-300);
   --onPrimaryBg: var(--color-primary-900);
+  --base: var(--color-primary-500);
+  --muted: var(--color-primary-50);
+  --accent: var(--color-primary-500);
+  --inverted: var(--color-primary-500);
+  --vivid: var(--color-primary-500);
   --primary: var(--color-primary-500);
+  --second: var(--color-primary-500);
+  --fill: var(--color-primary-500);
+  --cancel: var(--color-primary-500);
+  --reset: var(--color-primary-500);
+  --submit: var(--color-primary-500);
+  --warning: var(--color-primary-500);
+  --alert: var(--color-primary-500);
 }
 
 .theme-dark {
-  --neutralBg: var(--color-neutral-900);
-  --onNeutralBg: theme('colors.white');
-  --primaryBg: var(--color-primary-900);
-  --onPrimaryBg: var(--color-primary-50);
-  --primary: var(--color-primary-400);
+  --primaryBg: var(--color-primary-800);
+  --onPrimaryBg: var(--color-primary-300);
+  --base: var(--color-primary-400);
+  --muted: var(--color-primary-300);
+  --accent: var(--color-primary-500);
+  --inverted: var(--color-primary-500);
+  --vivid: var(--color-primary-500);
+  --primary: var(--color-primary-500);
+  --second: var(--color-primary-500);
+  --fill: var(--color-primary-500);
+  --cancel: var(--color-primary-500);
+  --reset: var(--color-primary-500);
+  --submit: var(--color-primary-500);
+  --warning: var(--color-primary-500);
+  --alert: var(--color-primary-500);
 }
