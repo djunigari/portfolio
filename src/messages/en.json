@@ -1,9 +1,11 @@
 {
   "navigation": {
-    "Projects": "Projects",
-    "Works": "Works",
-    "About": "About",
-    "Contact": "Contact"
+    "home": "Home",
+    "projects": "Projects",
+    "jobs": "Jobs",
+    "educations": "Educations",
+    "about": "About",
+    "contacts": "Contact"
   },
   "language": {
     "chooseLanguage": "Choose your language"

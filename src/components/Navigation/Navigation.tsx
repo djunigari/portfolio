@@ -12,10 +12,12 @@ import { NavMenu } from './NavMenu'
 export default function Navigation() {
   const t = useTranslations('navigation')
   const navigation = [
-    { name: t('Projects'), href: '#', current: true },
-    { name: t('Works'), href: '#', current: false },
-    { name: t('About'), href: '#', current: false },
-    { name: t('Contact'), href: '#', current: false },
+    { name: t('home'), href: '' },
+    { name: t('projects'), href: '#projects' },
+    { name: t('jobs'), href: '#jobs' },
+    { name: t('educations'), href: '#educations' },
+    { name: t('about'), href: '#about' },
+    { name: t('contacts'), href: '#contacts' },
   ]
 
   return (
