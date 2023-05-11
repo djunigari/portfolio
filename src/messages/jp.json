@@ -1,4 +1,10 @@
 {
+  "navigation": {
+    "Projects": "Projects",
+    "Works": "Works",
+    "About": "About",
+    "Contact": "Contact"
+  },
   "language": {
     "chooseLanguage": "Choose your language"
   },

@@ -1,18 +1,13 @@
 import LanguageMenu from '../Internationalization/LanguageMenu'
 import { ModeSwitch } from '../Theme/ModeSwitch'
 
-export function TopMenu() {
+export function Navigation() {
   // const pathname = usePathname()
   return (
-    <div
-      className={`
-        flex flex-row items-center gap-2
-        bg-gray-900 py-4 px-2
-      `}
-    >
+    <nav className="flex flex-row items-center gap-2 py-4 px-2">
       <LanguageMenu />
       <span className="flex-1" />
       <ModeSwitch />
-    </div>
+    </nav>
   )
 }

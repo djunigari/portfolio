@@ -1,9 +1,9 @@
-import { TopMenu } from '@/components/Menu/TopMenu'
 import { ThemeSwitch } from '@/components/Theme/ThemeSwitch'
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { ReactNode } from 'react'
 import './globals.css'
+import Example from '@/components/Navigation/Example'
 
 export const metadata = {
   title: 'Alexandre Djun Igari',
@@ -34,7 +34,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className="theme-dark theme-gray h-screen bg-primaryBg text-onPrimaryBg">
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <TopMenu />
+          <Example />
           <h1>Teste</h1>
           <ThemeSwitch />
           {children}
