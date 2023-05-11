@@ -8,6 +8,7 @@ import { LanguageDropDown } from '../Internationalization/Dropdown/LanguageDropD
 import { ModeSwitch } from '../Theme/ModeSwitch'
 import { MobileNavMenu } from './MobileNavMenu'
 import { NavMenu } from './NavMenu'
+import { useEffect, useState } from 'react'
 
 export default function Navigation() {
   const t = useTranslations('navigation')
@@ -19,6 +20,16 @@ export default function Navigation() {
     { name: t('about'), href: '#about' },
     { name: t('contacts'), href: '#contacts' },
   ]
+
+  const [anchor, setAnchor] = useState('')
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const a = window.location.href
+      const path = a.split('#')
+      if (path.length > 1) setAnchor(`#${path[1]}`)
+    }
+  }, [])
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
@@ -37,7 +48,11 @@ export default function Navigation() {
                 </Disclosure.Button>
               </div>
 
-              <NavMenu navigation={navigation} />
+              <NavMenu
+                navigation={navigation}
+                anchor={anchor}
+                setAnchor={setAnchor}
+              />
 
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <LanguageDropDown />
@@ -45,7 +60,7 @@ export default function Navigation() {
               </div>
             </div>
           </div>
-          <MobileNavMenu navigation={navigation} />
+          <MobileNavMenu navigation={navigation} setAnchor={setAnchor} />
         </>
       )}
     </Disclosure>

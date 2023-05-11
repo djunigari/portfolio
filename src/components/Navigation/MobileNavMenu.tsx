@@ -3,9 +3,10 @@ import { Disclosure } from '@headlessui/react'
 
 interface MobileNavMenuProps {
   navigation: NavigationMenuOption[]
+  setAnchor: (value: string) => void
 }
 
-export function MobileNavMenu({ navigation }: MobileNavMenuProps) {
+export function MobileNavMenu({ navigation, setAnchor }: MobileNavMenuProps) {
   return (
     <Disclosure.Panel className="sm:hidden">
       <div className="space-y-1 px-2 pb-3 pt-2">
@@ -14,15 +15,10 @@ export function MobileNavMenu({ navigation }: MobileNavMenuProps) {
             key={item.name}
             as="a"
             href={item.href}
-            className={[
-              item.current
-                ? 'bg-gray-900 text-white'
-                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-              'block rounded-md px-3 py-2 text-base font-medium',
-            ]
+            className={['block rounded-md px-3 py-2 text-base font-medium']
               .filter(Boolean)
               .join(' ')}
-            aria-current={item.current ? 'page' : undefined}
+            onClick={() => setAnchor(item.href)}
           >
             {item.name}
           </Disclosure.Button>

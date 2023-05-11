@@ -1,24 +1,12 @@
-'use client'
-
 import { NavigationMenuOption } from '@/interfaces/navigation'
-
-import { useEffect, useState } from 'react'
 
 interface NavMenuProps {
   navigation: NavigationMenuOption[]
+  anchor: string
+  setAnchor: (value: string) => void
 }
 
-export function NavMenu({ navigation }: NavMenuProps) {
-  const [anchor, setAnchor] = useState('')
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const a = window.location.href
-      const path = a.split('#')
-      if (path.length > 1) setAnchor(`#${path[1]}`)
-    }
-  }, [])
-
+export function NavMenu({ navigation, anchor, setAnchor }: NavMenuProps) {
   return (
     <div className="hidden sm:flex sm:justify-start space-x-4">
       {navigation.map((item) => (
