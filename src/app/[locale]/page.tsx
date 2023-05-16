@@ -16,8 +16,6 @@ export default function Home({ params }: { params: { locale: string } }) {
         {/* @ts-expect-error Async Server Component */}
         <User />
       </Suspense>
-
-      <div id="projects"> a a a </div>
     </div>
   )
 }
