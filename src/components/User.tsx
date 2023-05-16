@@ -20,11 +20,7 @@ export async function User() {
   return (
     <div>
       <h1 className="font-bold">Todos</h1>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
+      <ul></ul>
     </div>
   )
 }
