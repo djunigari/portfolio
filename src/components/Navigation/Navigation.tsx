@@ -2,13 +2,14 @@
 
 import { Disclosure } from '@headlessui/react'
 import { useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { HiXMark } from 'react-icons/hi2'
 import { LanguageDropDown } from '../Internationalization/Dropdown/LanguageDropDown'
 import { ModeSwitch } from '../Theme/ModeSwitch'
+import { ThemeSwitch } from '../Theme/ThemeSwitch'
 import { MobileNavMenu } from './MobileNavMenu'
 import { NavMenu } from './NavMenu'
-import { useEffect, useState } from 'react'
 
 export default function Navigation() {
   const t = useTranslations('navigation')
@@ -54,8 +55,9 @@ export default function Navigation() {
                 setAnchor={setAnchor}
               />
 
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="absolute flex flex-row gap-3 inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <LanguageDropDown />
+                <ThemeSwitch />
                 <ModeSwitch />
               </div>
             </div>

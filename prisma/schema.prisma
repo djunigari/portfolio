@@ -34,7 +34,7 @@ model Project{
 model Tecnology{
   id String @id @default(uuid())
   name String
-  imageUrl String
+  iconName String
   projects TecnologiesOnProjects[]
   employer TecnologiesOnEmployer[]
 }

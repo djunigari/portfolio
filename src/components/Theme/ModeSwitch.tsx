@@ -6,7 +6,6 @@ import { useEffect } from 'react'
 import { HiMoon, HiSun } from 'react-icons/hi2'
 
 export function ModeSwitch() {
-  console.log('ModeSwitch')
   const [isDarkTheme, setIsDarkTheme] = useStickyState<boolean>(
     true,
     'isDarkTheme',

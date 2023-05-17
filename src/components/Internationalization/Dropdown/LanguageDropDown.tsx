@@ -11,7 +11,7 @@ export function LanguageDropDown() {
   const flagUrl = locale?.imageUrl || locales[0].imageUrl
 
   return (
-    <Menu as="div" className="relative mr-3">
+    <Menu as="div" className="relative">
       <div>
         <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
           <span className="sr-only">Open language options</span>
