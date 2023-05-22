@@ -3,6 +3,7 @@
     "home": "Home",
     "projects": "Projects",
     "jobs": "Jobs",
+    "courses": "Courses",
     "educations": "Educations",
     "about": "About",
     "contacts": "Contact"
@@ -13,7 +14,8 @@
   "layout": {
     "title": {
       "jobs": "Jobs",
-      "educations": "Educations"
+      "educations": "Educations",
+      "courses": "Courses"
     }
   },
   "welcome": {

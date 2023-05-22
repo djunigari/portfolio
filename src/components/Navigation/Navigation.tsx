@@ -17,6 +17,7 @@ export default function Navigation() {
     { name: t('home'), href: '/' },
     { name: t('projects'), href: '#projects' },
     { name: t('jobs'), href: '#jobs' },
+    { name: t('courses'), href: '#courses' },
     { name: t('educations'), href: '#educations' },
     { name: t('about'), href: '#about' },
     { name: t('contacts'), href: '#contacts' },

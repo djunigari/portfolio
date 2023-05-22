@@ -1,4 +1,6 @@
-import { PrismaClient, Tecnology } from '@prisma/client'
+import { Academy, PrismaClient, Tecnology } from '@prisma/client'
+import academiesJson from '../src/json/academies.json'
+import coursesJson from '../src/json/courses.json'
 import educationsJson from '../src/json/educations.json'
 import employersJson from '../src/json/employers.json'
 import tecnologiesJson from '../src/json/tecnologies.json'
@@ -7,12 +9,27 @@ const prisma = new PrismaClient()
 
 // npx prisma db seed
 async function main() {
+  await deleteAll()
   await createTecnologies()
   await createEmployers()
   await createEducations()
+  await createAcademies()
+  await createCourses()
 }
 
-const tecnologies = new Map<String, Tecnology>()
+const tecnologies = new Map<string, Tecnology>()
+const academies = new Map<string, Academy>()
+
+const deleteAll = async () => {
+  await prisma.tecnologiesOnEmployer.deleteMany()
+  await prisma.tecnologiesOnProjects.deleteMany()
+  await prisma.tecnology.deleteMany()
+  await prisma.employer.deleteMany()
+  await prisma.project.deleteMany()
+  await prisma.education.deleteMany()
+  await prisma.course.deleteMany()
+  await prisma.academy.deleteMany()
+}
 
 const createTecnologies = async () => {
   for (let i = 0; i < tecnologiesJson.list.length; i++) {
@@ -66,6 +83,31 @@ const createEducations = async () => {
         startAt: new Date(e.startAt),
         endAt: new Date(e.endAt),
       },
+    })
+  })
+}
+
+const createAcademies = async () => {
+  for (let i = 0; i < academiesJson.list.length; i++) {
+    const a = academiesJson.list[i]
+    const res = await prisma.academy.create({
+      data: { name: a.name, site: a.site },
+    })
+    academies.set(a.name, res)
+  }
+}
+
+const createCourses = async () => {
+  coursesJson.list.forEach((item) => {
+    item.courses.forEach(async (c) => {
+      await prisma.course.create({
+        data: {
+          name: c.name,
+          startAt: new Date(c.startAt),
+          completedAt: new Date(c.completedAt),
+          academyId: academies.get(item.academy)?.id || '',
+        },
+      })
     })
   })
 }

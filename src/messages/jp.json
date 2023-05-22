@@ -2,6 +2,7 @@
   "navigation": {
     "Projects": "Projects",
     "Works": "Works",
+    "courses": "Courses",
     "About": "About",
     "Contact": "Contact"
   },
@@ -11,7 +12,8 @@
   "layout": {
     "title": {
       "jobs": "Jobs",
-      "educations": "Educations"
+      "educations": "Educations",
+      "courses": "Courses"
     }
   },
   "welcome": {

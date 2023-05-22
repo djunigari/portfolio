@@ -1,0 +1,109 @@
+{
+  "list": [
+    {
+      "academy": "Caelum",
+      "courses": [
+        {
+          "name": "FJ11-Java and Object Oriented",
+          "startAt": "2012-07-09",
+          "completedAt": "2012-07-13"
+        },
+        {
+          "name": "FJ21-Java for Web Development",
+          "startAt": "2012-07-16",
+          "completedAt": "2012-07-20"
+        },
+        {
+          "name": "FJ16-Java Lab using Tests,XML and Design Patterns",
+          "startAt": "2012-07-23",
+          "completedAt": "2012-07-25"
+        },
+        {
+          "name": "Fj25-Persistence using JPA and Hibernate",
+          "startAt": "2012-08-11",
+          "completedAt": "2012-09-01"
+        },
+        {
+          "name": "FJ26- Web Lab using JSF and CDI",
+          "startAt": "2012-09-08",
+          "completedAt": "2012-10-06"
+        },
+        {
+          "name": "FJ31-Java EE Advanced and Web Services",
+          "startAt": "2013-01-28",
+          "completedAt": "2013-02-08"
+        },
+        {
+          "name": "FJ95-Design Patterns for good programmers",
+          "startAt": "2013-01-30",
+          "completedAt": "2013-02-19"
+        }
+      ]
+    },
+    {
+      "academy": "Cod3r",
+      "courses": [
+        {
+          "name": "Complete Modern Web Course (Javascript 2022) + Projects",
+          "startAt": "2022-02-01",
+          "completedAt": "2022-04-01"
+        },
+        {
+          "name": "Next.js e React - Complete Course",
+          "startAt": "2022-04-01",
+          "completedAt": "2022-06-01"
+        },
+        {
+          "name": "GraphQL: Creating Flexible and Professionals APIs",
+          "startAt": "2022-06-01",
+          "completedAt": "2022-08-01"
+        },
+        {
+          "name": "Regex - Regular Expression Courses",
+          "startAt": "2022-02-01",
+          "completedAt": "2023-03-01"
+        },
+        {
+          "name": "Docker: Essential tool for developers",
+          "startAt": "2022-05-01",
+          "completedAt": "2023-05-21"
+        }
+      ]
+    },
+    {
+      "academy": "New Zealand Language Centres",
+      "courses": [
+        {
+          "name": "General English Pre Intermediate",
+          "startAt": "2016-08-01",
+          "completedAt": "2016-10-07"
+        },
+        {
+          "name": "General English Intermediate 1",
+          "startAt": "2016-10-10",
+          "completedAt": "2016-12-16"
+        },
+        {
+          "name": "General English Intermediate 2",
+          "startAt": "2017-01-04",
+          "completedAt": "2017-02-03"
+        },
+        {
+          "name": "Cambridge Pre FCE",
+          "startAt": "2017-02-07",
+          "completedAt": "2017-03-10"
+        },
+        {
+          "name": "Cambridge FCE",
+          "startAt": "2017-03-13",
+          "completedAt": "2017-06-06"
+        },
+        {
+          "name": "General English Advanced",
+          "startAt": "2017-06-12",
+          "completedAt": "2017-06-23"
+        }
+      ]
+    }
+  ]
+}

@@ -71,12 +71,15 @@ model Education {
 model Academy{
  id String @id @default(uuid()) 
  name String
+ site String?
  courses Course[]
 }
 
 model Course{
   id String @id @default(uuid())
   name String
+  startAt DateTime?
+  completedAt DateTime
   academyId String
   academy Academy @relation(fields: [academyId], references: [id])
 }
