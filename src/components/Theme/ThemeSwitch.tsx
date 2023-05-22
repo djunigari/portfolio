@@ -10,7 +10,6 @@ import { IoColorFill, IoColorPalette } from 'react-icons/io5'
 export function ThemeSwitch() {
   const [theme, setTheme] = useStickyState<string>(themes[0], 'Theme')
 
-  console.log('ThemeSwitch')
   useEffect(() => {}, [])
 
   useEffect(() => {

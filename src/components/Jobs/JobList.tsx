@@ -1,24 +1,32 @@
 'use client'
 
-import { Employer, TecnologiesOnEmployer, Tecnology } from '@prisma/client'
 import { useEffect, useState } from 'react'
 import { Job } from './Job'
-
-export interface EmployerWithTecnologies extends Employer {
-  tecnologies: (TecnologiesOnEmployer & {
-    tecnology: Tecnology
-  })[]
-}
+import { EmployerWithTecnologies, JobsResponseData } from './Jobs'
 
 interface JobListProps {
-  search: (cursor?: string) => Promise<EmployerWithTecnologies[]>
+  search: (cursor?: string) => Promise<JobsResponseData>
 }
 
 export function JobList({ search }: JobListProps) {
   const [employers, setEmployers] = useState<EmployerWithTecnologies[]>([])
+  const [lastCursor, setLastCursor] = useState<string>('')
+  const [hasNextPage, setHasNextPage] = useState<boolean>(true)
+
+  const getMoreData = () => {
+    search(lastCursor).then((values) => {
+      setEmployers((prev) => [...prev, ...values.data])
+      setLastCursor(values.metaData.lastCursor)
+      setHasNextPage(values.metaData.hasNextPage)
+    })
+  }
 
   useEffect(() => {
-    search().then((values) => setEmployers(values))
+    search().then((values) => {
+      setEmployers((prev) => [...prev, ...values.data])
+      setLastCursor(values.metaData.lastCursor)
+      setHasNextPage(values.metaData.hasNextPage)
+    })
   }, [search])
 
   return (
@@ -29,7 +37,7 @@ export function JobList({ search }: JobListProps) {
           <Job key={i} employer={e} />
         ))}
       </div>
-      {/* <div onClick={async () => await search()}>more</div> */}
+      {hasNextPage && <button onClick={getMoreData}>more</button>}
     </div>
   )
 }

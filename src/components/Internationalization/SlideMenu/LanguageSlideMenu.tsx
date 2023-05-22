@@ -2,10 +2,10 @@
 
 import { locales } from '@/interfaces/internationalization'
 import { Dialog, Transition } from '@headlessui/react'
-import { HiXMark } from 'react-icons/hi2'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { Fragment } from 'react'
+import { HiXMark } from 'react-icons/hi2'
 import { LanguageButton } from './LanguageButton'
 
 interface LanguageSlideMenuProps {
@@ -18,8 +18,6 @@ export default function LanguageSlideMenu({
   onClose,
 }: LanguageSlideMenuProps) {
   const t = useTranslations('language')
-
-  console.log('LanguageSlideMenu')
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>

@@ -1,33 +1,31 @@
-import { prisma } from '@/utils/prisma'
+import { Employer, TecnologiesOnEmployer, Tecnology } from '@prisma/client'
 import { JobList } from './JobList'
 
+const api = 'http://localhost:3000/api/jobs'
+
+export interface EmployerWithTecnologies extends Employer {
+  tecnologies: (TecnologiesOnEmployer & {
+    tecnology: Tecnology
+  })[]
+}
+
+export interface JobsResponseData {
+  data: EmployerWithTecnologies[]
+  metaData: {
+    total: number
+    lastCursor: string
+    hasNextPage: boolean
+  }
+}
+
 export function Jobs() {
-  // const result = await prisma.$transaction([
-  //   prisma.employer.count(),
-  //   prisma.employer.findMany({
-  //     take: 3,
-  //     include: { tecnologies: { include: { tecnology: true } } },
-  //   }),
-  // ])
-
-  // const total = result[0] ?? 0
-  // const employers = result[1]
-  // const myCursor = employers[employers.length]?.id || ''
-
-  const search = async (lastCursor?: string) => {
+  const search = async (lastCursor?: string): Promise<JobsResponseData> => {
     'use server'
-    const res = await prisma.employer.findMany({
-      take: 3,
-      ...(lastCursor && {
-        skip: 1, // Skip the cursor
-        cursor: {
-          id: lastCursor as string,
-        },
-      }),
-      include: { tecnologies: { include: { tecnology: true } } },
-    })
-    console.log(res)
-    return res
+    const res = await fetch(
+      `${api}${lastCursor ? `?lastCursor=${lastCursor}` : ''}`,
+      { cache: 'no-cache' },
+    )
+    return await res.json()
   }
 
   return <JobList search={search} />

@@ -10,7 +10,6 @@ export function ModeSwitch() {
     true,
     'isDarkTheme',
   )
-  console.log('ModeSwitch')
   useEffect(() => {
     if (isDarkTheme) {
       document!.querySelector('body')!.classList.remove('theme-light')
