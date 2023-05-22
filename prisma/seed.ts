@@ -1,66 +1,56 @@
 import { PrismaClient, Tecnology } from '@prisma/client'
+import employersJson from '../src/json/employers.json'
+import tecnologiesJson from '../src/json/tecnologies.json'
 
 const prisma = new PrismaClient()
 
 // npx prisma db seed
 async function main() {
   await createTecnologies()
-  await createEmployer()
+  await createEmployers()
 }
 
 const tecnologies = new Map<String, Tecnology>()
 
 const createTecnologies = async () => {
-  Promise.all([
-    createTecnology('Java', 'DiJava'),
-    createTecnology('C#', 'TbBrandCSharp'),
-    createTecnology('Git', 'BsGithub'),
-    createTecnology('Spring', 'SiSpring'),
-    createTecnology('Javascript', 'SiJavascript'),
-    createTecnology('Typescript', 'SiTypescript'),
-  ])
-    .then((_) => console.log('ok'))
-    .catch((e) => console.log(e))
+  for (let i = 0; i < tecnologiesJson.list.length; i++) {
+    const t = tecnologiesJson.list[i]
+    const res = await prisma.tecnology.create({
+      data: { name: t.name, iconUrl: t.iconUrl },
+    })
+    tecnologies.set(t.name, res)
+  }
 }
 
-const createTecnology = async (name: string, iconName: string) => {
-  const t = await prisma.tecnology.create({
-    data: { name, iconName },
-  })
-  tecnologies.set(t.name, t)
-}
+const createEmployers = async () => {
+  for (let i = 0; i < employersJson.list.length; i++) {
+    const e = employersJson.list[i]
+    const employer = await prisma.employer.create({
+      data: {
+        language: 'en',
+        name: e.name,
+        position: e.position,
+        description: e.description,
+        site: e.site,
+        logoImageUrl: e.logoImageUrl,
+        startAt: new Date(e.startAt),
+        endAt: new Date(e.endAt),
+      },
+    })
 
-const createEmployer = async () => {
-  const e = await prisma.employer.create({
-    data: {
-      language: 'en',
-      name: 'UOL - Universo Online',
-      position: 'Java Backend Developer',
-      description:
-        'Worked as a Backend Developer at UOL, a company in Brazil, I was involved in projects for UOL’s Billing using Java. I used to develop web services to integrate Billing System with internal and external applications. One of my main responsibilities it was to find and fix bugs that they were reported by customers and Notifications from Splunk. I usually created and refactored tests.',
-      site: 'https://www.uol.com.br',
-      logoImageUrl: '',
-      startAt: new Date('2015-01-01'),
-      endAt: new Date('2016-07-01'),
-    },
-  })
-
-  const t = tecnologies.get('Java')
-
-  if (!t) console.log('error')
-  else await addTecnologiesToEmployer(e.id, t.id)
-}
-
-const addTecnologiesToEmployer = async (
-  employerId: string,
-  tecnologyId: string,
-) => {
-  await prisma.tecnologiesOnEmployer.create({
-    data: {
-      employerId,
-      tecnologyId,
-    },
-  })
+    for (let y = 0; y < e.tecnologies.length; y++) {
+      const t = e.tecnologies[y]
+      const tecnology = tecnologies.get(t)
+      if (tecnology) {
+        await prisma.tecnologiesOnEmployer.create({
+          data: {
+            employerId: employer.id,
+            tecnologyId: tecnology.id,
+          },
+        })
+      }
+    }
+  }
 }
 
 main()

@@ -36,10 +36,11 @@
 .theme-light {
   --primaryBg: var(--color-primary-300);
   --onPrimaryBg: var(--color-primary-900);
-  --accentBg: var(--color-primary-400);
-  --onAccentBg: var(--color-primary-900);
+  --mutedBg: var(--color-primary-900);
+  --onMutedBg: var(--color-primary-300);
+  --accentBg: var(--color-primary-300);
+  --onAccentBg: var(--color-primary-600);
   --base: var(--color-primary-500);
-  --muted: var(--color-primary-50);
   --inverted: var(--color-primary-500);
   --vivid: var(--color-primary-500);
   --primary: var(--color-primary-500);
@@ -55,10 +56,11 @@
 .theme-dark {
   --primaryBg: var(--color-primary-800);
   --onPrimaryBg: var(--color-primary-300);
-  --accentBg: var(--color-primary-900);
+  --mutedBg: var(--color-primary-900);
+  --onMutedBg: var(--color-primary-300);
+  --accentBg: var(--color-primary-600);
   --onAccentBg: var(--color-primary-300);
   --base: var(--color-primary-400);
-  --muted: var(--color-primary-300);
   --inverted: var(--color-primary-500);
   --vivid: var(--color-primary-500);
   --primary: var(--color-primary-500);

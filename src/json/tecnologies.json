@@ -1,0 +1,40 @@
+{
+  "list": [
+    {
+      "name": "Action Script",
+      "iconUrl": "/images/icons-tec/{theme}/actionscript.svg"
+    },
+    {
+      "name": "Chakra UI",
+      "iconUrl": "/images/icons-tec/{theme}/chakraui.svg"
+    },
+    { "name": "C#", "iconUrl": "/images/icons-tec/{theme}/csharp.svg" },
+    { "name": "CSS", "iconUrl": "/images/icons-tec/{theme}/css.svg" },
+    { "name": "Git", "iconUrl": "/images/icons-tec/{theme}/git.svg" },
+    { "name": "GitHub", "iconUrl": "/images/icons-tec/{theme}/github.svg" },
+    { "name": "GraphQL", "iconUrl": "/images/icons-tec/{theme}/graphql.svg" },
+    { "name": "HTML", "iconUrl": "/images/icons-tec/{theme}/html.svg" },
+    { "name": "Java", "iconUrl": "/images/icons-tec/{theme}/java.svg" },
+    {
+      "name": "JavaScript",
+      "iconUrl": "/images/icons-tec/{theme}/javascript.svg"
+    },
+    {
+      "name": "SQL Server",
+      "iconUrl": "/images/icons-tec/{theme}/microsoft-sql-server.svg"
+    },
+    { "name": "MySQL", "iconUrl": "/images/icons-tec/{theme}/mysql.svg" },
+    { "name": "Nest.js", "iconUrl": "/images/icons-tec/{theme}/nestjs.svg" },
+    { "name": "Next.js", "iconUrl": "/images/icons-tec/{theme}/nextjs.svg" },
+    { "name": "Node.js", "iconUrl": "/images/icons-tec/{theme}/nodejs.svg" },
+    { "name": "PostgreSQL", "iconUrl": "/images/icons-tec/{theme}/pgsql.svg" },
+    { "name": "React.js", "iconUrl": "/images/icons-tec/{theme}/reactjs.svg" },
+    { "name": "Spring", "iconUrl": "/images/icons-tec/{theme}/spring.svg" },
+    { "name": "Tailwind", "iconUrl": "/images/icons-tec/{theme}/tailwind.svg" },
+    {
+      "name": "Typescript",
+      "iconUrl": "/images/icons-tec/{theme}/typescript.svg"
+    },
+    { "name": "VB", "iconUrl": "/images/icons-tec/{theme}/vb.svg" }
+  ]
+}

@@ -9,9 +9,10 @@ export const metadata = {
   description: 'WebSite as curriculum online created by Alexandre Djun Igari',
 }
 
-export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'jp' }, { locale: 'pt' }]
-}
+// Causing Warning: Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported. at AppContainer
+// export function generateStaticParams() {
+//   return [{ locale: 'en' }, { locale: 'jp' }, { locale: 'pt' }]
+// }
 
 interface LocaleLayoutProps {
   children: ReactNode

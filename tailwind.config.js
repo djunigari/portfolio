@@ -13,6 +13,8 @@ module.exports = {
       colors: {
         primaryBg: 'var(--primaryBg)',
         onPrimaryBg: 'var(--onPrimaryBg)',
+        mutedBg: 'var(--mutedBg)',
+        onMutedBg: 'var(--onMutedBg)',
         accentBg: 'var(--accentBg)',
         onAccentBg: 'var(--onAccentBg)',
       },

@@ -1,3 +1,4 @@
+import { LayoutTitle } from '@/components/LayoutTitle'
 import { ReactNode } from 'react'
 
 interface AppLayoutProps {
@@ -14,7 +15,7 @@ export const metadata = {
 export default function AppLayout({ children }: AppLayoutProps) {
   return (
     <div>
-      <h1>Alexandre Djun Igari</h1>
+      <LayoutTitle title="jobs" />
       {children}
     </div>
   )

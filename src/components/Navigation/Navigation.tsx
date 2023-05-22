@@ -14,7 +14,7 @@ import { NavMenu } from './NavMenu'
 export default function Navigation() {
   const t = useTranslations('navigation')
   const navigation = [
-    { name: t('home'), href: '' },
+    { name: t('home'), href: '/' },
     { name: t('projects'), href: '#projects' },
     { name: t('jobs'), href: '#jobs' },
     { name: t('educations'), href: '#educations' },

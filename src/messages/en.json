@@ -10,6 +10,11 @@
   "language": {
     "chooseLanguage": "Choose your language"
   },
+  "layout": {
+    "title": {
+      "jobs": "Jobs"
+    }
+  },
   "welcome": {
     "helloWorld": "Hello World, eh?",
     "happyYear": "Happy { year }!"

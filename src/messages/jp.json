@@ -6,7 +6,12 @@
     "Contact": "Contact"
   },
   "language": {
-    "chooseLanguage": "Choose your language"
+    "chooseLanguage": "言語"
+  },
+  "layout": {
+    "title": {
+      "jobs": "Jobs"
+    }
   },
   "welcome": {
     "helloWorld": "Hello World!",
