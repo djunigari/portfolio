@@ -57,20 +57,26 @@ model TecnologiesOnProjects {
   @@id([tecnologyId, projectId])
 }
 
-model EducationInstitution {
+model Education {
   id String @id @default(uuid())
   name String
   site String?
   logoImageUrl String?
-  courses Course[]
+  degree String
+  field String?
+  startAt DateTime
+  endAt DateTime?
+}
+
+model Academy{
+ id String @id @default(uuid()) 
+ name String
+ courses Course[]
 }
 
 model Course{
   id String @id @default(uuid())
   name String
-  degree String
-  startAt DateTime?
-  endAt DateTime?
-  institutionId String
-  institution EducationInstitution @relation(fields: [institutionId], references: [id])
+  academyId String
+  academy Academy @relation(fields: [academyId], references: [id])
 }

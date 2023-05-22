@@ -1,6 +1,6 @@
 import moment from 'moment'
 import { TecnologyLogo } from '../Theme/TecnologyLogo'
-import { EmployerWithTecnologies } from './JobList'
+import { EmployerWithTecnologies } from './Jobs'
 
 export function Job({ employer }: { employer: EmployerWithTecnologies }) {
   const startDate = moment(employer.startAt)

@@ -1,4 +1,5 @@
 import { PrismaClient, Tecnology } from '@prisma/client'
+import educationsJson from '../src/json/educations.json'
 import employersJson from '../src/json/employers.json'
 import tecnologiesJson from '../src/json/tecnologies.json'
 
@@ -8,6 +9,7 @@ const prisma = new PrismaClient()
 async function main() {
   await createTecnologies()
   await createEmployers()
+  await createEducations()
 }
 
 const tecnologies = new Map<String, Tecnology>()
@@ -51,6 +53,21 @@ const createEmployers = async () => {
       }
     }
   }
+}
+
+const createEducations = async () => {
+  educationsJson.list.forEach(async (e) => {
+    await prisma.education.create({
+      data: {
+        name: e.name,
+        site: e.site,
+        degree: e.degree,
+        field: e.field,
+        startAt: new Date(e.startAt),
+        endAt: new Date(e.endAt),
+      },
+    })
+  })
 }
 
 main()

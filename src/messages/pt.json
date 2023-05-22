@@ -12,7 +12,8 @@
   },
   "layout": {
     "title": {
-      "jobs": "Empregos"
+      "jobs": "Empregos",
+      "educations": "Formaçōes"
     }
   },
   "welcome": {

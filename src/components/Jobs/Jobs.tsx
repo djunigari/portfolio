@@ -1,4 +1,5 @@
 import { Employer, TecnologiesOnEmployer, Tecnology } from '@prisma/client'
+import { LayoutTitle } from '../LayoutTitle'
 import { JobList } from './JobList'
 
 const api = 'http://localhost:3000/api/jobs'
@@ -28,5 +29,10 @@ export function Jobs() {
     return await res.json()
   }
 
-  return <JobList search={search} />
+  return (
+    <>
+      <LayoutTitle title="jobs" />
+      <JobList search={search} />
+    </>
+  )
 }

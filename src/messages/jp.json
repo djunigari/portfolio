@@ -10,7 +10,8 @@
   },
   "layout": {
     "title": {
-      "jobs": "Jobs"
+      "jobs": "Jobs",
+      "educations": "Educations"
     }
   },
   "welcome": {
