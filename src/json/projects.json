@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "language": "en",
+      "name": "Catalogo Japão",
+      "description": "",
+      "url": "https://catalogo.jp/",
+      "gitHubUrl": "https://github.com/djunigari/catalogo-nextjs12",
+      "tecnologies": [
+        "React.js",
+        "Next.js",
+        "Nest.js",
+        "GraphQL",
+        "Chakra UI",
+        "Recoil",
+        "NextAuth",
+        "TypeORM",
+        "MongoDB",
+        "Firebase",
+        "TypeScript"
+      ]
+    }
+  ]
+}

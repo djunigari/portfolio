@@ -2,10 +2,6 @@ import { prisma } from '@/utils/prisma'
 import moment from 'moment'
 import { LayoutTitle } from '../LayoutTitle'
 
-// interface EducationInstitutionWithCourses extends EducationInstitution {
-//   courses: Course[]
-// }
-
 export async function Educations() {
   const educations = await prisma.education.findMany({
     orderBy: { startAt: 'desc' },

@@ -10,14 +10,16 @@ export default function Home() {
     <div
       className={`
       flex flex-col items-center 
-      mx-8
-      2xl:max-w-4xl 2xl:mx-auto`}
+      `}
     >
       <div id="about" className="w-full">
         <About />
       </div>
       <div id="projects" className="w-full">
-        <Projects />
+        <Suspense fallback={<p>Loading...</p>}>
+          {/* @ts-expect-error Async Server Component */}
+          <Projects />
+        </Suspense>
       </div>
       <div id="jobs" className="w-full">
         <Jobs />

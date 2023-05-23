@@ -3,6 +3,7 @@ import academiesJson from '../src/json/academies.json'
 import coursesJson from '../src/json/courses.json'
 import educationsJson from '../src/json/educations.json'
 import employersJson from '../src/json/employers.json'
+import projectsJson from '../src/json/projects.json'
 import tecnologiesJson from '../src/json/tecnologies.json'
 
 const prisma = new PrismaClient()
@@ -12,6 +13,7 @@ async function main() {
   await deleteAll()
   await createTecnologies()
   await createEmployers()
+  await createProjects()
   await createEducations()
   await createAcademies()
   await createCourses()
@@ -25,6 +27,7 @@ const deleteAll = async () => {
   await prisma.tecnologiesOnProjects.deleteMany()
   await prisma.tecnology.deleteMany()
   await prisma.employer.deleteMany()
+  await prisma.project.deleteMany()
   await prisma.project.deleteMany()
   await prisma.education.deleteMany()
   await prisma.course.deleteMany()
@@ -64,6 +67,34 @@ const createEmployers = async () => {
         await prisma.tecnologiesOnEmployer.create({
           data: {
             employerId: employer.id,
+            tecnologyId: tecnology.id,
+          },
+        })
+      }
+    }
+  }
+}
+
+const createProjects = async () => {
+  for (let i = 0; i < projectsJson.list.length; i++) {
+    const p = projectsJson.list[i]
+    const project = await prisma.project.create({
+      data: {
+        language: p.language,
+        name: p.name,
+        description: p.description,
+        url: p.url,
+        gitHubUrl: p.gitHubUrl,
+      },
+    })
+
+    for (let y = 0; y < p.tecnologies.length; y++) {
+      const t = p.tecnologies[y]
+      const tecnology = tecnologies.get(t)
+      if (tecnology) {
+        await prisma.tecnologiesOnProjects.create({
+          data: {
+            projectId: project.id,
             tecnologyId: tecnology.id,
           },
         })

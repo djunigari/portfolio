@@ -35,6 +35,11 @@
       "name": "Typescript",
       "iconUrl": "/images/icons-tec/{theme}/typescript.svg"
     },
-    { "name": "VB", "iconUrl": "/images/icons-tec/{theme}/vb.svg" }
+    { "name": "VB", "iconUrl": "/images/icons-tec/{theme}/vb.svg" },
+    { "name": "MongoDB", "iconUrl": "/images/icons-tec/{theme}/mongodb.svg" },
+    { "name": "NextAuth", "iconUrl": "/images/icons-tec/{theme}/nextauth.svg" },
+    { "name": "Firebase", "iconUrl": "/images/icons-tec/{theme}/firebase.svg" },
+    { "name": "TypeORM", "iconUrl": "/images/icons-tec/{theme}/typeorm.svg" },
+    { "name": "Recoil", "iconUrl": "/images/icons-tec/{theme}/recoil.svg" }
   ]
 }

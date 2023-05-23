@@ -34,10 +34,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className="theme-dark theme-gray h-screen bg-primaryBg text-onPrimaryBg">
+      <body className="theme-dark theme-gray h-screen bg-primaryBg text-onPrimaryBg ">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navigation />
-          {children}
+          <main className="max-w-3xl mx-4 sm:mx-auto">{children}</main>
         </NextIntlClientProvider>
         <ContactButton />
         <BackToTopButton />
