@@ -13,9 +13,9 @@ interface CoursesProps {
 
 export function Courses({ academies }: CoursesProps) {
   return (
-    <>
+    <div className="flex flex-col gap-2 rounded-md divide-y bg-mutedBg text-onMutedBg p-2">
       {academies.map((a, i) => (
-        <Disclosure as="div" key={i}>
+        <Disclosure as="div" className="p-2" key={i}>
           {({ open }) => (
             <>
               <Disclosure.Button className="flex w-full items-center justify-between hover:text-gray-500">
@@ -24,21 +24,19 @@ export function Courses({ academies }: CoursesProps) {
               </Disclosure.Button>
 
               <Disclosure.Panel>
-                <div className="">
-                  {a.courses.map((c, i) => (
-                    <div key={i} className="flex justify-between">
-                      <span className="text-xs">{c.name}</span>
-                      <span className="text-xs">
-                        {moment(c.completedAt).year()}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                {a.courses.map((c, i) => (
+                  <div key={i} className="flex justify-between ml-2">
+                    <span className="text-xs truncate">{c.name}</span>
+                    <span className="text-xs">
+                      {moment(c.completedAt).year()}
+                    </span>
+                  </div>
+                ))}
               </Disclosure.Panel>
             </>
           )}
         </Disclosure>
       ))}
-    </>
+    </div>
   )
 }

@@ -13,7 +13,8 @@
     "title": {
       "jobs": "Jobs",
       "educations": "Educations",
-      "courses": "Courses"
+      "courses": "Courses",
+      "projects": "Projects"
     }
   },
   "welcome": {

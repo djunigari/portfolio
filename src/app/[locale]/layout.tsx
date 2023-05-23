@@ -1,3 +1,5 @@
+import { BackToTopButton } from '@/components/BackToTopButton'
+import { ContactButton } from '@/components/ContactButton'
 import Navigation from '@/components/Navigation/Navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import { ReactNode } from 'react'
@@ -37,6 +39,8 @@ export default async function LocaleLayout({
           <Navigation />
           {children}
         </NextIntlClientProvider>
+        <ContactButton />
+        <BackToTopButton />
       </body>
     </html>
   )

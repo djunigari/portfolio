@@ -15,11 +15,12 @@
     "title": {
       "jobs": "Jobs",
       "educations": "Educations",
-      "courses": "Courses"
+      "courses": "Courses",
+      "projects": "Projects"
     }
   },
-  "welcome": {
-    "helloWorld": "Hello World, eh?",
-    "happyYear": "Happy { year }!"
+  "about": {
+    "name": "Hi, my name is Alexandre Djun Igari.",
+    "resume": "I have 7 years of experience in software development."
   }
 }
