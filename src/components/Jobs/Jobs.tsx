@@ -2,7 +2,7 @@ import { Employer, TecnologiesOnEmployer, Tecnology } from '@prisma/client'
 import { LayoutTitle } from '../LayoutTitle'
 import { JobList } from './JobList'
 
-const api = 'http://localhost:3000/api/jobs'
+const api = `${process.env.NEXT_URL}/api/jobs`
 
 export interface EmployerWithTecnologies extends Employer {
   tecnologies: (TecnologiesOnEmployer & {
