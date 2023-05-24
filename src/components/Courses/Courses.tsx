@@ -13,7 +13,7 @@ interface CoursesProps {
 
 export function Courses({ academies }: CoursesProps) {
   return (
-    <div className="flex flex-col gap-2 rounded-md divide-y bg-mutedBg text-onMutedBg p-2">
+    <div className="flex flex-col gap-2 rounded-md divide-y bg-mutedBg text-onMutedBg p-2 shadow-black shadow-md">
       {academies.map((a, i) => (
         <Disclosure as="div" className="p-2" key={i}>
           {({ open }) => (

@@ -10,7 +10,7 @@ export async function Educations() {
   return (
     <div className="w-full">
       <LayoutTitle title="educations" />
-      <div className="flex flex-col gap-2 divide-y w-full rounded-md bg-mutedBg text-onMutedBg p-2">
+      <div className="flex flex-col gap-2 divide-y w-full rounded-md bg-mutedBg text-onMutedBg p-2 shadow-black shadow-md">
         {educations.map((e, i) => (
           <div key={i} className="flex flex-col p-2">
             <div className="flex justify-between">

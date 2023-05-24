@@ -10,7 +10,7 @@ export async function Projects() {
   return (
     <div className="w-full">
       <LayoutTitle title="projects" />
-      <div className="flex flex-col gap-2 divide-y w-full rounded-md bg-mutedBg text-onMutedBg p-2">
+      <div className="flex flex-col gap-2 divide-y w-full rounded-md bg-mutedBg text-onMutedBg p-2 shadow-black shadow-md">
         {projects.map((p, i) => (
           <div key={i} className="flex flex-col p-2">
             <span className="text-md font-bold">{p.name}</span>

@@ -16,9 +16,17 @@ const list: string[] = [
 export function About() {
   const t = useTranslations('about')
   return (
-    <div className="flex flex-col sm:flex-row items-center">
+    <div className="relative flex flex-col shadow-black shadow-lg sm:flex-row items-center p-2 bg-center bg-[url('/images/backimage.jpeg')] ">
+      <div
+        className={`
+          absolute
+          w-full
+          -inset-0
+          bg-gradient-to-br from-gray-900 to-gray-600 opacity-80
+        `}
+      ></div>
       {/* <div className="flex sm:w-1/2 items-end justify-end"></div> */}
-      <div className=" ml-auto mr-auto sm:mr-0">
+      <div className="relative ml-auto mr-auto sm:mr-0">
         <div className="flex flex-col w-min">
           <p className="self-start font-semibold">{t('name')}</p>
           <div className="flex flex-col ">
@@ -50,7 +58,7 @@ export function About() {
             </p>
           </div>
         </div>
-        <Skills list={list} />
+        <Skills list={list} showAll={true} />
       </div>
     </div>
   )

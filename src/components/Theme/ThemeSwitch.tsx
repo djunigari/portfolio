@@ -24,7 +24,7 @@ export function ThemeSwitch() {
 
   return (
     <Menu as="div" className="relative rounded-md">
-      <Menu.Button className="flex items-center bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+      <Menu.Button className="flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
         <IoColorPalette className={`w-6 h-6 text-${theme}-100`} />
         <span> {theme} </span>
       </Menu.Button>
@@ -38,7 +38,7 @@ export function ThemeSwitch() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-20 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-20 origin-top-right rounded-md bg-white py-1 ring-1 ring-black ring-opacity-5 focus:outline-none">
           {themes.map((t) => (
             <Menu.Item key={t}>
               {({ active }) => (

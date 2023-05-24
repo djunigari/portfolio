@@ -37,9 +37,9 @@
   --primaryBg: var(--color-primary-300);
   --onPrimaryBg: var(--color-primary-900);
   --mutedBg: var(--color-primary-900);
-  --onMutedBg: var(--color-primary-300);
-  --accentBg: var(--color-primary-300);
-  --onAccentBg: var(--color-primary-600);
+  --onMutedBg: var(--color-primary-600);
+  --accentBg: var(--color-primary-600);
+  --onAccentBg: var(--color-primary-300);
   --base: var(--color-primary-500);
   --inverted: var(--color-primary-500);
   --vivid: var(--color-primary-500);

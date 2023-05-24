@@ -19,6 +19,21 @@
         "Firebase",
         "TypeScript"
       ]
+    },
+    {
+      "language": "en",
+      "name": "Portfolio",
+      "description": "",
+      "url": "https://alexandreigari.com/",
+      "gitHubUrl": "https://github.com/djunigari/portfolio",
+      "tecnologies": [
+        "React.js",
+        "Next.js",
+        "Prisma",
+        "Tailwindcss",
+        "Next-intl",
+        "TypeScript"
+      ]
     }
   ]
 }

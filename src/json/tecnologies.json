@@ -40,6 +40,10 @@
     { "name": "NextAuth", "iconUrl": "/images/icons-tec/{theme}/nextauth.svg" },
     { "name": "Firebase", "iconUrl": "/images/icons-tec/{theme}/firebase.svg" },
     { "name": "TypeORM", "iconUrl": "/images/icons-tec/{theme}/typeorm.svg" },
-    { "name": "Recoil", "iconUrl": "/images/icons-tec/{theme}/recoil.svg" }
+    { "name": "Recoil", "iconUrl": "/images/icons-tec/{theme}/recoil.svg" },
+    {
+      "name": "Next-intl",
+      "iconUrl": "/images/icons-tec/{theme}/next-intl.svg"
+    }
   ]
 }

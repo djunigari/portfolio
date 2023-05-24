@@ -35,7 +35,7 @@ export function Job({ employer }: { employer: EmployerWithTecnologies }) {
   }
 
   return (
-    <div className="flex flex-col gap-2 rounded-md bg-mutedBg text-onMutedBg shadow-md p-2">
+    <div className="flex flex-col gap-2 rounded-md bg-mutedBg text-onMutedBg shadow-black shadow-md p-2">
       <div className="flex justify-between text-sm">
         <span>{employer.position} </span>
         <span className="text-xs">{getDurantion()}</span>
