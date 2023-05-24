@@ -2,6 +2,8 @@ generator client {
   provider = "prisma-client-js"
 }
 
+//https://www.prisma.io/docs/guides/database/planetscale - setup
+//https://stackoverflow.com/questions/72746602/prisma-io-long-text-with-mysql/72746965 - String is var(191)
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")

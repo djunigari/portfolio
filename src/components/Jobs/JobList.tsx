@@ -9,6 +9,7 @@ interface JobListProps {
 }
 
 export function JobList({ search }: JobListProps) {
+  const [loading, setLoading] = useState<boolean>(true)
   const [employers, setEmployers] = useState<EmployerWithTecnologies[]>([])
   const [lastCursor, setLastCursor] = useState<string>('')
   const [hasNextPage, setHasNextPage] = useState<boolean>(true)
@@ -28,8 +29,11 @@ export function JobList({ search }: JobListProps) {
       setEmployers(data)
       setLastCursor(lastCursor)
       setHasNextPage(hasNextPage)
+      setLoading(false)
     })
   }, [search])
+
+  if (loading) return <p>Loading Jobs....</p>
 
   return (
     <div className="flex flex-col items-center w-full">

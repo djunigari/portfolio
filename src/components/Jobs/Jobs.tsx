@@ -24,7 +24,6 @@ export function Jobs() {
     'use server'
     const res = await fetch(
       `${api}${lastCursor ? `?lastCursor=${lastCursor}` : ''}`,
-      { cache: 'no-cache' },
     )
     return await res.json()
   }
@@ -32,6 +31,7 @@ export function Jobs() {
   return (
     <>
       <LayoutTitle title="jobs" />
+
       <JobList search={search} />
     </>
   )
