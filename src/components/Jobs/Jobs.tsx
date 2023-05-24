@@ -24,6 +24,7 @@ export function Jobs() {
     'use server'
     const res = await fetch(
       `${api}${lastCursor ? `?lastCursor=${lastCursor}` : ''}`,
+      { next: { revalidate: 24 * 60 * 60 } },
     )
     return await res.json()
   }

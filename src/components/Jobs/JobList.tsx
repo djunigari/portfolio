@@ -15,6 +15,7 @@ export function JobList({ search }: JobListProps) {
   const [hasNextPage, setHasNextPage] = useState<boolean>(true)
 
   const getMoreData = () => {
+    console.log(lastCursor)
     search(lastCursor).then(
       ({ data, metaData: { lastCursor, hasNextPage } }) => {
         setEmployers((prev) => [...prev, ...data])
