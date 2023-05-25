@@ -37,36 +37,52 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className="theme-dark theme-gray h-screen bg-primaryBg text-onPrimaryBg ">
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <div className="fixed top-0 z-50 w-full bg-primaryBg">
+      <body className="theme-dark theme-gray h-screen bg-primaryBg text-onPrimaryBg">
+        <div
+          className={`
+          absolute
+          w-full
+          h-full
+          -inset-0
+          bg-gradient-to-br from-gray-900 to-gray-600 opacity-80
+        `}
+        ></div>
+        <div
+          id="main-content"
+          className="relative h-screen w-full overflow-scroll"
+        >
+          <NextIntlClientProvider locale={locale} messages={messages}>
             <Navigation />
-          </div>
-          <main className="relative max-w-3xl mx-4 sm:mx-auto pt-20 ">
-            {children}
-          </main>
-        </NextIntlClientProvider>
-        <ContactButton />
-        <BackToTopButton />
-        <footer className="flex flex-row gap-4 justify-center items-center p-10">
-          <Link
-            href={'https://www.linkedin.com/in/alexandre-djun-igari-91a03065/'}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BsLinkedin className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
-          </Link>
-          <Link
-            href={'https://github.com/djunigari'}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BsGithub className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
-          </Link>
-          <Link href={'/resume/resume-en.pdf'} target="_blank" rel="noreferrer">
-            <HiDocumentText className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
-          </Link>
-        </footer>
+            <main className="max-w-3xl mx-4 sm:mx-auto ">{children}</main>
+          </NextIntlClientProvider>
+          <ContactButton />
+          <BackToTopButton />
+          <footer className="flex flex-row gap-4 justify-center items-center p-10">
+            <Link
+              href={
+                'https://www.linkedin.com/in/alexandre-djun-igari-91a03065/'
+              }
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsLinkedin className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
+            </Link>
+            <Link
+              href={'https://github.com/djunigari'}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsGithub className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
+            </Link>
+            <Link
+              href={'/resume/resume-en.pdf'}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <HiDocumentText className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
+            </Link>
+          </footer>
+        </div>
       </body>
     </html>
   )

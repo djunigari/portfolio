@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    return `rgba(var(${variableName}), ${opacityValue || 1})`
+  }
+}
+
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
@@ -16,12 +22,12 @@ module.exports = {
     },
     extend: {
       colors: {
-        primaryBg: 'var(--primaryBg)',
-        onPrimaryBg: 'var(--onPrimaryBg)',
-        mutedBg: 'var(--mutedBg)',
-        onMutedBg: 'var(--onMutedBg)',
-        accentBg: 'var(--accentBg)',
-        onAccentBg: 'var(--onAccentBg)',
+        primaryBg: withOpacity('--primaryBg'),
+        onPrimaryBg: withOpacity('--onPrimaryBg'),
+        mutedBg: withOpacity('--mutedBg'),
+        onMutedBg: withOpacity('--onMutedBg'),
+        accentBg: withOpacity('--accentBg'),
+        onAccentBg: withOpacity('--onAccentBg'),
       },
     },
   },

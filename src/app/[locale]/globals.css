@@ -8,29 +8,29 @@
 }
 
 .theme-gray {
-  --color-primary-50: theme('colors.gray.50');
-  --color-primary-100: theme('colors.gray.100');
-  --color-primary-200: theme('colors.gray.200');
-  --color-primary-300: theme('colors.gray.300');
-  --color-primary-400: theme('colors.gray.400');
-  --color-primary-500: theme('colors.gray.500');
-  --color-primary-600: theme('colors.gray.600');
-  --color-primary-700: theme('colors.gray.700');
-  --color-primary-800: theme('colors.gray.800');
-  --color-primary-900: theme('colors.gray.900');
+  --color-primary-50: 249, 250, 251;
+  --color-primary-100: 243, 244, 246;
+  --color-primary-200: 229, 231, 235;
+  --color-primary-300: 209, 213, 219;
+  --color-primary-400: 156, 163, 175;
+  --color-primary-500: 107, 114, 128;
+  --color-primary-600: 75, 85, 99;
+  --color-primary-700: 55, 65, 81;
+  --color-primary-800: 31, 41, 55;
+  --color-primary-900: 17, 24, 39;
 }
 
 .theme-blue {
-  --color-primary-50: theme('colors.blue.50');
-  --color-primary-100: theme('colors.blue.100');
-  --color-primary-200: theme('colors.blue.200');
-  --color-primary-300: theme('colors.blue.300');
-  --color-primary-400: theme('colors.blue.400');
-  --color-primary-500: theme('colors.blue.500');
-  --color-primary-600: theme('colors.blue.600');
-  --color-primary-700: theme('colors.blue.700');
-  --color-primary-800: theme('colors.blue.800');
-  --color-primary-900: theme('colors.blue.900');
+  --color-primary-50: 239, 246, 255;
+  --color-primary-100: 219, 234, 254;
+  --color-primary-200: 191, 219, 254;
+  --color-primary-300: 147, 197, 253;
+  --color-primary-400: 96, 165, 250;
+  --color-primary-500: 59, 130, 246;
+  --color-primary-600: 37, 99, 235;
+  --color-primary-700: 29, 78, 216;
+  --color-primary-800: 30, 64, 175;
+  --color-primary-900: 30, 58, 138;
 }
 
 .theme-light {

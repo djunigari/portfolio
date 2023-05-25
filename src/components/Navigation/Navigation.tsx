@@ -16,8 +16,8 @@ export default function Navigation() {
   const navigation = [
     { name: t('projects'), href: '#projects' },
     { name: t('jobs'), href: '#jobs' },
-    { name: t('courses'), href: '#courses' },
     { name: t('educations'), href: '#educations' },
+    { name: t('courses'), href: '#courses' },
     { name: t('about'), href: '#about' },
     { name: t('contacts'), href: '#contacts' },
   ]
@@ -32,8 +32,39 @@ export default function Navigation() {
     }
   }, [])
 
+  useEffect(() => {
+    const divThatIsScrolling = document.getElementById('main-content')
+
+    const handleScroll = () => {
+      const anchors = document.querySelectorAll('a[href^="#"]')
+      const scrollTop = divThatIsScrolling?.scrollTop || 0
+
+      anchors.forEach((anchor) => {
+        const href = anchor.getAttribute('href')
+
+        if (href && href !== '') {
+          const element = document.querySelector(href)
+          if (element instanceof HTMLElement) {
+            if (
+              element.offsetTop <= scrollTop + 100 &&
+              element.offsetTop + element.offsetHeight > scrollTop + 100
+            ) {
+              setAnchor(href)
+            }
+          }
+        }
+      })
+    }
+
+    divThatIsScrolling?.addEventListener('scroll', handleScroll)
+    return () => divThatIsScrolling?.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <Disclosure as="nav">
+    <Disclosure
+      as="nav"
+      className="sticky top-0 z-10 w-full bg-primaryBg bg-opacity-30 hover:bg-opacity-100"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

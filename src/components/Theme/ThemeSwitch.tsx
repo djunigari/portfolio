@@ -23,7 +23,7 @@ export function ThemeSwitch() {
   }
 
   return (
-    <Menu as="div" className="relative rounded-md">
+    <Menu as="div" className="relative rounded-md border-0">
       <Menu.Button className="flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
         <IoColorPalette className={`w-6 h-6 text-${theme}-100`} />
         <span> {theme} </span>
