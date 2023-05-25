@@ -1,5 +1,4 @@
 import { prisma } from '@/utils/prisma'
-import { LayoutTitle } from '../LayoutTitle'
 import { Courses } from './Courses'
 
 export async function Academies() {
@@ -7,10 +6,5 @@ export async function Academies() {
     include: { courses: { orderBy: { completedAt: 'desc' } } },
   })
 
-  return (
-    <>
-      <LayoutTitle title="courses" />
-      <Courses academies={academies} />
-    </>
-  )
+  return <Courses academies={academies} />
 }

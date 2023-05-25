@@ -49,7 +49,13 @@ export function About() {
                 >
                   <BsGithub className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
                 </Link>
-                <HiDocumentText className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
+                <Link
+                  href={'/resume/resume-en.pdf'}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <HiDocumentText className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
+                </Link>
               </div>
             </div>
             <span className="text-5xl md:text-7xl font-bold">DEVELOPER</span>

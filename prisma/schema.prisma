@@ -94,3 +94,9 @@ model Course{
 
   @@index([academyId])
 }
+
+model Certificate{
+  id String @id @default(uuid())
+  name String
+  url String?
+}

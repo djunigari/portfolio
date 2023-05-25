@@ -1,5 +1,4 @@
 import { Employer, TecnologiesOnEmployer, Tecnology } from '@prisma/client'
-import { LayoutTitle } from '../LayoutTitle'
 import { JobList } from './JobList'
 
 const api = `${process.env.NEXT_URL}/api/jobs`
@@ -29,11 +28,5 @@ export function Jobs() {
     return await res.json()
   }
 
-  return (
-    <>
-      <LayoutTitle title="jobs" />
-
-      <JobList search={search} />
-    </>
-  )
+  return <JobList search={search} />
 }

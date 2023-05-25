@@ -1,5 +1,6 @@
 import { Academy, PrismaClient, Tecnology } from '@prisma/client'
 import academiesJson from '../src/json/academies.json'
+import certificatesJson from '../src/json/certificates.json'
 import coursesJson from '../src/json/courses.json'
 import educationsJson from '../src/json/educations.json'
 import employersJson from '../src/json/employers.json'
@@ -8,6 +9,7 @@ import tecnologiesJson from '../src/json/tecnologies.json'
 
 const prisma = new PrismaClient()
 
+// npx prisma db push
 // npx prisma db seed
 async function main() {
   await deleteAll()
@@ -17,6 +19,7 @@ async function main() {
   await createEducations()
   await createAcademies()
   await createCourses()
+  await createCertificate()
 }
 
 const tecnologies = new Map<string, Tecnology>()
@@ -32,6 +35,7 @@ const deleteAll = async () => {
   await prisma.education.deleteMany()
   await prisma.course.deleteMany()
   await prisma.academy.deleteMany()
+  await prisma.certificate.deleteMany()
 }
 
 const createTecnologies = async () => {
@@ -141,6 +145,15 @@ const createCourses = async () => {
       })
     })
   })
+}
+
+const createCertificate = async () => {
+  for (let i = 0; i < certificatesJson.list.length; i++) {
+    const c = certificatesJson.list[i]
+    await prisma.certificate.create({
+      data: { name: c.name, url: c.url },
+    })
+  }
 }
 
 main()
