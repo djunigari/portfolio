@@ -23,6 +23,7 @@ module.exports = {
     extend: {
       colors: {
         primaryBg: withOpacity('--primaryBg'),
+        onHoverPrimaryBg: withOpacity('--onHoverPrimaryBg'),
         onPrimaryBg: withOpacity('--onPrimaryBg'),
         mutedBg: withOpacity('--mutedBg'),
         onMutedBg: withOpacity('--onMutedBg'),

@@ -16,9 +16,9 @@ export async function Educations() {
               e.endAt ? moment(e.endAt).year() : ''
             }`}</span>
           </div>
-          <span className="text-xs ml-2">{`${
-            e.degree + e.field ? `- ${e.field}` : ''
-          }`}</span>
+          <span className="text-xs ml-2">{`${e.degree} 
+          ${e.field ? ` - ${e.field}` : ''}
+          `}</span>
         </div>
       ))}
     </div>

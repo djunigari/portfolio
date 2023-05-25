@@ -36,6 +36,7 @@
 .theme-light {
   --primaryBg: var(--color-primary-300);
   --onPrimaryBg: var(--color-primary-900);
+  --onHoverPrimaryBg: var(--color-primary-700);
   --mutedBg: var(--color-primary-900);
   --onMutedBg: var(--color-primary-600);
   --accentBg: var(--color-primary-600);
@@ -56,6 +57,7 @@
 .theme-dark {
   --primaryBg: var(--color-primary-800);
   --onPrimaryBg: var(--color-primary-300);
+  --onHoverPrimaryBg: var(--color-primary-500);
   --mutedBg: var(--color-primary-900);
   --onMutedBg: var(--color-primary-300);
   --accentBg: var(--color-primary-600);

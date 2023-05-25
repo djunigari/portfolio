@@ -53,7 +53,7 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navigation />
-            <main className="max-w-3xl mx-4 sm:mx-auto ">{children}</main>
+            <main className="max-w-3xl px-4 md:mx-auto ">{children}</main>
           </NextIntlClientProvider>
           <ContactButton />
           <BackToTopButton />
@@ -65,21 +65,21 @@ export default async function LocaleLayout({
               target="_blank"
               rel="noreferrer"
             >
-              <BsLinkedin className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
+              <BsLinkedin className="h-6 w-6 md:h-8 md:w-8 cursor-pointer hover:text-onHoverPrimaryBg" />
             </Link>
             <Link
               href={'https://github.com/djunigari'}
               target="_blank"
               rel="noreferrer"
             >
-              <BsGithub className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
+              <BsGithub className="h-6 w-6 md:h-8 md:w-8 cursor-pointer hover:text-onHoverPrimaryBg" />
             </Link>
             <Link
               href={'/resume/resume-en.pdf'}
               target="_blank"
               rel="noreferrer"
             >
-              <HiDocumentText className="h-6 w-6 md:h-8 md:w-8 cursor-pointer" />
+              <HiDocumentText className="h-6 w-6 md:h-8 md:w-8 cursor-pointer hover:text-onHoverPrimaryBg" />
             </Link>
           </footer>
         </div>

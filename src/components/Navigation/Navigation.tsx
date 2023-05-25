@@ -63,7 +63,7 @@ export default function Navigation() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 z-10 w-full bg-primaryBg bg-opacity-30 hover:bg-opacity-100"
+      className="sticky top-0 z-10 w-full bg-primaryBg bg-opacity-100 sm:bg-opacity-30 hover:bg-opacity-100"
     >
       {({ open }) => (
         <>
