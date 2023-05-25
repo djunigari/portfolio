@@ -17,7 +17,18 @@ export function About() {
   const t = useTranslations('about')
   return (
     <div className="flex flex-col sm:flex-row items-center p-2">
-      {/* <div className="flex sm:w-1/2 items-end justify-end"></div> */}
+      <div className="flex flex-col w-full sm:w-1/2 justify-center items-center p-8">
+        <span>BUILDING....</span>
+
+        <div className="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+          <div
+            className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
+            style={{ width: '75%' }}
+          >
+            75% Completed
+          </div>
+        </div>
+      </div>
       <div className={`ml-auto mr-auto sm:mr-0`}>
         <div className="flex flex-col w-min">
           <p className="self-start font-semibold">{t('name')}</p>
