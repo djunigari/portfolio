@@ -5,15 +5,17 @@ import { Skill } from './Skill'
 export function Skills({
   list,
   showAll = false,
+  className,
 }: {
   list: string[]
   showAll?: boolean
+  className?: string
 }) {
   const [showAllItens, setShowAllItens] = useState<boolean>(showAll)
 
   if (showAllItens) {
     return (
-      <div className="flex flex-wrap gap-2">
+      <div className={`flex flex-wrap gap-2 ${className}`}>
         {list.map((item) => (
           <Skill key={item} name={item} />
         ))}
@@ -21,7 +23,7 @@ export function Skills({
     )
   } else {
     return (
-      <div className="flex flex-wrap gap-2">
+      <div className={`flex flex-wrap gap-2 ${className}`}>
         <>
           {list.map(
             (item, index) => index < 3 && <Skill key={index} name={item} />,
