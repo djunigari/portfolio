@@ -1,6 +1,6 @@
 import { BackToTopButton } from '@/components/BackToTopButton'
 import { ContactButton } from '@/components/ContactButton'
-import Navigation from '@/components/Navigation/Navigation'
+import Navbar from '@/components/Navigation/Navbar'
 import { NextIntlClientProvider } from 'next-intl'
 import Link from 'next/link'
 import { ReactNode } from 'react'
@@ -52,7 +52,7 @@ export default async function LocaleLayout({
           className="relative h-screen w-full overflow-scroll"
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <Navigation />
+            <Navbar />
             <main className="max-w-3xl px-4 md:mx-auto ">{children}</main>
           </NextIntlClientProvider>
           <ContactButton />
