@@ -51,9 +51,7 @@ export default async function LocaleLayout({
 
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
-          <main id="main-content" className="max-w-3xl px-4 md:mx-auto ">
-            {children}
-          </main>
+          <main className="max-w-3xl px-4 md:mx-auto ">{children}</main>
         </NextIntlClientProvider>
 
         <ContactButton />

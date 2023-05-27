@@ -26,11 +26,9 @@ export function NavMenu() {
   }, [])
 
   useEffect(() => {
-    const divThatIsScrolling = document.getElementById('main-content')
-
     const handleScroll = () => {
       const anchors = document.querySelectorAll('a[href^="#"]')
-      const scrollTop = divThatIsScrolling?.scrollTop || 0
+      const scrollTop = document.documentElement.scrollTop
 
       anchors.forEach((anchor) => {
         const href = anchor.getAttribute('href')
@@ -49,8 +47,8 @@ export function NavMenu() {
       })
     }
 
-    divThatIsScrolling?.addEventListener('scroll', handleScroll)
-    return () => divThatIsScrolling?.removeEventListener('scroll', handleScroll)
+    document.addEventListener('scroll', handleScroll)
+    return () => document.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
