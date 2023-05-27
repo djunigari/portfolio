@@ -37,10 +37,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className="theme-dark theme-gray h-screen bg-primaryBg text-onPrimaryBg">
+      <body className="theme-dark theme-gray h-screen bg-primaryBg text-onPrimaryBg overflow-hidden">
         <div
           className={`
-          absolute
+          fixed
           w-full
           h-full
           -inset-0
