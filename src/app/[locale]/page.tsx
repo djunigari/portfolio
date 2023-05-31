@@ -16,31 +16,31 @@ export default function Home() {
       <div id="about" className="w-full">
         <About />
       </div>
-      <div id="projects" className="w-full">
+      <section id="projects" className="w-full">
         <LayoutTitle title="projects" />
         <Suspense fallback={<p>Loading...</p>}>
           {/* @ts-expect-error Async Server Component */}
           <Projects />
         </Suspense>
-      </div>
-      <div id="jobs" className="w-full">
+      </section>
+      <section id="jobs" className="w-full">
         <LayoutTitle title="jobs" />
         <Jobs />
-      </div>
-      <div id="educations" className="w-full">
+      </section>
+      <section id="educations" className="w-full">
         <LayoutTitle title="educations" />
         <Suspense fallback={<p>Loading...</p>}>
           {/* @ts-expect-error Async Server Component */}
           <Educations />
         </Suspense>
-      </div>
-      <div id="courses" className="w-full">
+      </section>
+      <section id="courses" className="w-full">
         <LayoutTitle title="courses" />
         <Suspense fallback={<p>Loading...</p>}>
           {/* @ts-expect-error Async Server Component */}
           <Academies />
         </Suspense>
-      </div>
+      </section>
     </div>
   )
 }

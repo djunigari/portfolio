@@ -1,9 +1,8 @@
 'use client'
 
 import { NavigationMenuOption } from '@/interfaces/navigation'
-import { Disclosure } from '@headlessui/react'
+import { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
-import { HiXMark } from 'react-icons/hi2'
 
 interface MobileNavMenuProps {
   navigation: NavigationMenuOption[]
@@ -18,46 +17,63 @@ export function MobileNavMenu({
   setAnchor,
   className,
 }: MobileNavMenuProps) {
-  return (
-    <Disclosure as="div" className={className}>
-      {({ open }) => (
-        <>
-          <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-            <span className="sr-only">Open main menu</span>
-            {open ? (
-              <HiXMark className="block h-6 w-6" aria-hidden="true" />
-            ) : (
-              <div className="flex flex-row items-center">
-                <FaBars className="block h-6 w-6" aria-hidden="true" />
-                {anchor && (
-                  <span className="ml-2 text-md font-bold">
-                    {navigation.find((n) => n.href === anchor)?.name}
-                  </span>
-                )}
-              </div>
-            )}
-          </Disclosure.Button>
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
-          <Disclosure.Panel className="absolute right-0 w-full bg-primaryBg space-y-1 px-2 pb-3 pt-2">
-            {navigation.map((item) => (
-              <Disclosure.Button
-                key={item.name}
-                as="a"
-                href={item.href}
+  const handleClick = (href: string) => {
+    setAnchor(href)
+    setIsOpen(false)
+  }
+
+  useEffect(() => {
+    if (!isOpen) {
+      const elem = document.activeElement as HTMLElement
+      if (elem) {
+        elem?.blur()
+      }
+    }
+  }, [isOpen])
+
+  return (
+    <div className={`navbar-start ${className}`}>
+      <div className="dropdown">
+        <label
+          tabIndex={0}
+          className="btn btn-ghost"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <div className="flex flex-row items-center">
+            <FaBars className="h-6 w-6" />
+            {anchor && (
+              <span className="ml-2 text-md font-bold">
+                {navigation.find((n) => n.href === anchor)?.name}
+              </span>
+            )}
+          </div>
+        </label>
+        <ul
+          tabIndex={0}
+          id="mobile-menu"
+          className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          {navigation.map((item) => (
+            <li key={item.name}>
+              <a
+                href={`${item.href}`}
+                aria-current={anchor === item.href ? 'page' : undefined}
                 className={[
-                  item.href === anchor ? 'bg-mutedBg text-onMutedBg' : '',
-                  'block rounded-md px-3 py-2 text-base font-medium',
+                  anchor === item.href ? 'btn-active' : '',
+                  'btn btn-ghost rounded-btn text-xs',
                 ]
                   .filter(Boolean)
                   .join(' ')}
-                onClick={() => setAnchor(item.href)}
+                onClick={() => handleClick(item.href)}
               >
                 {item.name}
-              </Disclosure.Button>
-            ))}
-          </Disclosure.Panel>
-        </>
-      )}
-    </Disclosure>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   )
 }

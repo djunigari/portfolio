@@ -17,6 +17,20 @@ module.exports = {
       ...defaultTheme.screens,
       sm: '675px',
     },
+    extend: {
+      backgroundColor: {
+        'gradient-dots': 'var(--b3)',
+      },
+      backgroundImage: {
+        'gradient-dots': 'radial-gradient(hsl(var(--b1)) 1px, transparent 0)',
+      },
+      backgroundSize: {
+        'gradient-dots': '2px 2px',
+      },
+      backgroundPosition: {
+        'gradient-dots': '0 0',
+      },
+    },
   },
 
   daisyui: {

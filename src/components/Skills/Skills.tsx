@@ -15,7 +15,7 @@ export function Skills({
 
   if (showAllItens) {
     return (
-      <div className={`flex flex-wrap gap-2 ${className}`}>
+      <div className={`flex flex-wrap gap-1 justify-end ${className}`}>
         {list.map((item) => (
           <Skill key={item} name={item} />
         ))}
@@ -23,14 +23,17 @@ export function Skills({
     )
   } else {
     return (
-      <div className={`flex flex-wrap gap-2 ${className}`}>
+      <div className={`flex flex-wrap gap-1 justify-end ${className}`}>
         <>
           {list.map(
             (item, index) => index < 3 && <Skill key={index} name={item} />,
           )}
         </>
         {list.length > 3 && !showAllItens && (
-          <div className={`badge`} onClick={() => setShowAllItens(true)}>
+          <div
+            className={`badge badge-outline text-xs cursor-pointer`}
+            onClick={() => setShowAllItens(true)}
+          >
             +{list.length - 3} (show all)
           </div>
         )}

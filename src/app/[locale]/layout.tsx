@@ -37,7 +37,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} data-theme="luxury">
-      <body className="h-screen max-h-screen overflow-scroll">
+      <body className="min-h-screen bg-gradient-dots overflow-scroll">
         <div
           className={`
           fixed
