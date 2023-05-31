@@ -36,8 +36,8 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale}>
-      <body className="theme-dark theme-gray h-screen max-h-screen bg-primaryBg text-onPrimaryBg overflow-scroll">
+    <html lang={locale} data-theme="luxury">
+      <body className="h-screen max-h-screen overflow-scroll">
         <div
           className={`
           fixed
@@ -56,23 +56,25 @@ export default async function LocaleLayout({
 
         <ContactButton />
         <BackToTopButton />
-        <footer className="flex flex-row gap-4 justify-center items-center p-10">
+        <footer className="flex flex-row gap-4 justify-center items-center p-10 text-primary">
           <Link
             href={'https://www.linkedin.com/in/alexandre-djun-igari-91a03065/'}
             target="_blank"
             rel="noreferrer"
           >
-            <BsLinkedin className="h-6 w-6 md:h-8 md:w-8 cursor-pointer hover:text-onHoverPrimaryBg" />
+            <BsLinkedin className="h-6 w-6 md:h-8 md:w-8" />
           </Link>
           <Link
             href={'https://github.com/djunigari'}
             target="_blank"
             rel="noreferrer"
           >
-            <BsGithub className="h-6 w-6 md:h-8 md:w-8 cursor-pointer hover:text-onHoverPrimaryBg" />
+            <BsGithub className="h-6 w-6 md:h-8 md:w-8" />
           </Link>
           <Link href={'/resume/resume-en.pdf'} target="_blank" rel="noreferrer">
-            <HiDocumentText className="h-6 w-6 md:h-8 md:w-8 cursor-pointer hover:text-onHoverPrimaryBg" />
+            <span>
+              <HiDocumentText className="h-6 w-6 md:h-8 md:w-8" />
+            </span>
           </Link>
         </footer>
       </body>

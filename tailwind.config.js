@@ -1,11 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
-function withOpacity(variableName) {
-  return ({ opacityValue }) => {
-    return `rgba(var(${variableName}), ${opacityValue || 1})`
-  }
-}
+const daisyuiThemes = require('./src/json/themes/themes.json')
 
 module.exports = {
   mode: 'jit',
@@ -21,17 +17,21 @@ module.exports = {
       ...defaultTheme.screens,
       sm: '675px',
     },
-    extend: {
-      colors: {
-        primaryBg: withOpacity('--primaryBg'),
-        onHoverPrimaryBg: withOpacity('--onHoverPrimaryBg'),
-        onPrimaryBg: withOpacity('--onPrimaryBg'),
-        mutedBg: withOpacity('--mutedBg'),
-        onMutedBg: withOpacity('--onMutedBg'),
-        accentBg: withOpacity('--accentBg'),
-        onAccentBg: withOpacity('--onAccentBg'),
-      },
-    },
   },
-  plugins: [require('@headlessui/tailwindcss')],
+
+  daisyui: {
+    themes: daisyuiThemes.themes,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'dark',
+  },
+
+  plugins: [
+    require('@headlessui/tailwindcss'),
+    require('@tailwindcss/typography'),
+    require('daisyui'),
+  ],
 }

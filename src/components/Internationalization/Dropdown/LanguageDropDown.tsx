@@ -1,11 +1,9 @@
 'use client'
 
-import Link from '@/components/Internationalization/Link'
 import { locales } from '@/interfaces/internationalization'
-import { Menu, Transition } from '@headlessui/react'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
-import { Fragment } from 'react'
+import Link from 'next/link'
 
 export function LanguageDropDown({ className }: { className?: string }) {
   const defaultLocale = useLocale()
@@ -13,66 +11,42 @@ export function LanguageDropDown({ className }: { className?: string }) {
   const flagUrl = locale?.imageUrl || locales[0].imageUrl
 
   return (
-    <Menu as="div" className={`relative ${className}`}>
-      <div>
-        <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-          <span className="sr-only">Open language options</span>
-          <div className="flex w-6 h-6 items-center" aria-label="Country flag">
-            <Image
-              src={flagUrl}
-              alt="Country flag image"
-              loading="lazy"
-              width={24}
-              height={24}
-              className="rounded-full"
-            />
-          </div>
-        </Menu.Button>
-      </div>
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
+    <div className={`dropdown dropdown-end ${className}`}>
+      <button tabIndex={0} className="btn btn-ghost rounded-btn p-1">
+        <Image
+          src={flagUrl}
+          alt="Country flag image"
+          loading="lazy"
+          width={24}
+          height={24}
+          className="rounded-full"
+        />
+      </button>
+      <ul
+        tabIndex={0}
+        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
       >
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 ring-black ring-opacity-5 focus:outline-none">
-          {locales.map((l) => (
-            <Menu.Item key={l.code}>
-              {({ active }) => (
-                <Link
-                  href={`${l.language}`}
-                  rel="preload"
-                  className={[
-                    active ? 'bg-gray-100' : '',
-                    'block px-4 py-2 text-sm text-gray-700',
-                    'flex flex-row gap-1 items-center',
-                  ]
-                    .filter(Boolean)
-                    .join(' ')}
-                >
-                  <div
-                    className="flex w-6 h-6 items-center"
-                    aria-label="Country flag"
-                  >
-                    <Image
-                      src={l.imageUrl}
-                      alt="Country flag image"
-                      loading="lazy"
-                      width={20}
-                      height={20}
-                      className="rounded-full"
-                    />
-                  </div>
-                  <span>{l.displayName}</span>
-                </Link>
-              )}
-            </Menu.Item>
-          ))}
-        </Menu.Items>
-      </Transition>
-    </Menu>
+        {locales.map((l, i) => (
+          <li key={i}>
+            <Link href={`${l.language}`} rel="preload">
+              <div
+                className="flex w-6 h-6 items-center"
+                aria-label="Country flag"
+              >
+                <Image
+                  src={l.imageUrl}
+                  alt="Country flag image"
+                  loading="lazy"
+                  width={20}
+                  height={20}
+                  className="rounded-full"
+                />
+              </div>
+              <span>{l.displayName}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

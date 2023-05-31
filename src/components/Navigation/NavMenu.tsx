@@ -53,17 +53,15 @@ export function NavMenu() {
 
   return (
     <>
-      <div className="hidden min-[675px]:flex min-[675px]:justify-start">
+      <div className="hidden min-[675px]:flex min-[675px]:gap-2 min-[675px]:justify-start ">
         {navigation.map((item) => (
           <a
             key={item.name}
             href={`${item.href}`}
             aria-current={anchor === item.href ? 'page' : undefined}
             className={[
-              anchor === item.href
-                ? 'bg-gray-900 text-white'
-                : 'hover:bg-accentBg hover:text-onAccentBg',
-              'rounded-md px-3 py-2 text-sm font-semibold cursor-pointer',
+              anchor === item.href ? 'btn-active' : '',
+              'btn btn-ghost rounded-btn text-xs',
             ]
               .filter(Boolean)
               .join(' ')}

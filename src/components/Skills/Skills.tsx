@@ -30,15 +30,7 @@ export function Skills({
           )}
         </>
         {list.length > 3 && !showAllItens && (
-          <div
-            className={`
-              inline-flex items-center rounded-md 
-              bg-gray-50 px-2 py-1 
-              text-xs text-gray-600 ring-1 ring-inset ring-gray-500/10
-              cursor-pointer
-            `}
-            onClick={() => setShowAllItens(true)}
-          >
+          <div className={`badge`} onClick={() => setShowAllItens(true)}>
             +{list.length - 3} (show all)
           </div>
         )}
