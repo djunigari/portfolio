@@ -26,10 +26,10 @@ export function ThemeSwitch() {
 
   return (
     <div className="dropdown dropdown-end">
-      <button tabIndex={0} className="btn btn-ghost rounded-btn text-xs p-1">
+      <label tabIndex={0} className="btn btn-ghost rounded-btn text-xs p-1">
         <IoColorPalette className={`w-6 h-6 mr-1`} />
         <span> {theme} </span>
-      </button>
+      </label>
 
       <ul
         id="theme-dropdown"
