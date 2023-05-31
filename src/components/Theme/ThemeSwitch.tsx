@@ -26,6 +26,7 @@ export function ThemeSwitch() {
 
   return (
     <div className="dropdown dropdown-end">
+      {/* need to be a label, because daisyui do not set visibility when using button  */}
       <label tabIndex={0} className="btn btn-ghost rounded-btn text-xs p-1">
         <IoColorPalette className={`w-6 h-6 mr-1`} />
         <span> {theme} </span>

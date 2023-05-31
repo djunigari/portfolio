@@ -12,7 +12,7 @@ export function LanguageDropDown({ className }: { className?: string }) {
 
   return (
     <div className={`dropdown dropdown-end ${className}`}>
-      <button tabIndex={0} className="btn btn-ghost rounded-btn p-1">
+      <label tabIndex={0} className="btn btn-ghost rounded-btn p-1">
         <Image
           src={flagUrl}
           alt="Country flag image"
@@ -21,7 +21,7 @@ export function LanguageDropDown({ className }: { className?: string }) {
           height={24}
           className="rounded-full"
         />
-      </button>
+      </label>
       <ul
         tabIndex={0}
         className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
