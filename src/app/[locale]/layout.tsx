@@ -1,11 +1,7 @@
-import { BackToTopButton } from '@/components/BackToTopButton'
-import { ContactButton } from '@/components/ContactButton'
 import Navbar from '@/components/Navigation/Navbar'
 import { NextIntlClientProvider } from 'next-intl'
-import Link from 'next/link'
 import { ReactNode } from 'react'
-import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { HiDocumentText } from 'react-icons/hi2'
+import Footer from './footer'
 import './globals.css'
 import notFound from './not-found'
 
@@ -54,29 +50,9 @@ export default async function LocaleLayout({
           <main className="max-w-3xl px-4 md:mx-auto ">{children}</main>
         </NextIntlClientProvider>
 
-        <ContactButton />
-        <BackToTopButton />
-        <footer className="flex flex-row gap-4 justify-center items-center p-10 text-primary">
-          <Link
-            href={'https://www.linkedin.com/in/alexandre-djun-igari-91a03065/'}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BsLinkedin className="h-6 w-6 md:h-8 md:w-8" />
-          </Link>
-          <Link
-            href={'https://github.com/djunigari'}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BsGithub className="h-6 w-6 md:h-8 md:w-8" />
-          </Link>
-          <Link href={'/resume/resume-en.pdf'} target="_blank" rel="noreferrer">
-            <span>
-              <HiDocumentText className="h-6 w-6 md:h-8 md:w-8" />
-            </span>
-          </Link>
-        </footer>
+        {/* <ContactButton />
+        <BackToTopButton /> */}
+        <Footer className="mt-4" />
       </body>
     </html>
   )
