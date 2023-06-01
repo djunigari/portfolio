@@ -5,14 +5,14 @@ export default function useModalDisclosure() {
 
   const onOpen = () => {
     setIsOpen(true)
-    document.body.classList.remove('overflow-scroll')
-    document.body.classList.add('overflow-hidden')
+    document.querySelector('body')?.classList.remove('overflow-scroll')
+    document.querySelector('body')?.classList.add('overflow-hidden')
   }
 
   const onClose = () => {
     setIsOpen(false)
-    document.body.classList.remove('overflow-hidden')
-    document.body.classList.add('overflow-scroll')
+    document.querySelector('body')?.classList.remove('overflow-hidden')
+    document.querySelector('body')?.classList.add('overflow-scroll')
   }
 
   return { isOpen, onOpen, onClose }
