@@ -1,8 +1,8 @@
 'use client'
 
+import useModalDisclosure from '@/hooks/useModalDisclosure'
 import moment from 'moment'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
 import Modal from '../Utils/Modal'
 import { EmployerWithTecnologies } from './Jobs'
 
@@ -12,21 +12,9 @@ const JobDetailModal = ({
   employer: EmployerWithTecnologies
 }) => {
   const t = useTranslations('layout.jobs')
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const { isOpen, onOpen, onClose } = useModalDisclosure()
   const startDate = moment(employer.startAt)
   const timeEnd = moment(employer.endAt)
-
-  const onOpen = () => {
-    setIsOpen(true)
-    document.body.classList.remove('overflow-scroll')
-    document.body.classList.add('overflow-hidden')
-  }
-
-  const onClose = () => {
-    setIsOpen(false)
-    document.body.classList.remove('overflow-hidden')
-    document.body.classList.add('overflow-scroll')
-  }
 
   return (
     <>

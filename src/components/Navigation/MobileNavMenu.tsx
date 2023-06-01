@@ -3,6 +3,7 @@
 import { NavigationMenuOption } from '@/interfaces/navigation'
 import { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
+import { ContactButton } from '../Contact/ContactButton'
 
 interface MobileNavMenuProps {
   navigation: NavigationMenuOption[]
@@ -72,6 +73,9 @@ export function MobileNavMenu({
               </a>
             </li>
           ))}
+          <li>
+            <ContactButton />
+          </li>
         </ul>
       </div>
     </div>

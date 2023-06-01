@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
+import { ContactButton } from '../Contact/ContactButton'
 import { MobileNavMenu } from './MobileNavMenu'
 
 export function NavMenu() {
@@ -12,7 +13,6 @@ export function NavMenu() {
     { name: t('educations'), href: '#educations' },
     { name: t('courses'), href: '#courses' },
     { name: t('about'), href: '#about' },
-    { name: t('contacts'), href: '/contacts' },
   ]
 
   const [anchor, setAnchor] = useState('')
@@ -70,6 +70,7 @@ export function NavMenu() {
             {item.name}
           </a>
         ))}
+        <ContactButton />
       </div>
       <MobileNavMenu
         navigation={navigation}
