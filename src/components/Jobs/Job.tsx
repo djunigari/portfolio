@@ -1,5 +1,6 @@
 import moment from 'moment'
 import { TecnologyLogo } from '../Theme/TecnologyLogo'
+import JobDetailModal from './JobDetailModal'
 import { EmployerWithTecnologies } from './Jobs'
 
 export function Job({ employer }: { employer: EmployerWithTecnologies }) {
@@ -35,36 +36,25 @@ export function Job({ employer }: { employer: EmployerWithTecnologies }) {
   }
 
   return (
-    <div className="flex flex-col gap-2 rounded-md bg-mutedBg text-onMutedBg shadow-black shadow-md p-2">
-      <div className="flex justify-between text-sm">
-        <span>{employer.position} </span>
-        <span className="text-xs">{getDurantion()}</span>
-      </div>
-      <span className="text-lg font-bold">{employer.name}</span>
-      {/* {e.logoImageUrl && (
-    <div className="flex rounded-md bg-white items-center justify-center p-2 ">
-      <Image
-        src={e.logoImageUrl}
-        width={200}
-        height={200}
-        loading="lazy"
-        alt="Employer logo"
-      />
-    </div>
-  )} */}
+    <>
+      <div className="flex flex-col gap-2 rounded-md bg-mutedBg text-onMutedBg shadow-black shadow-md p-2">
+        <div className="flex justify-between text-sm">
+          <span>{employer.position} </span>
+          <span className="text-xs">{getDurantion()}</span>
+        </div>
+        <span className="text-lg font-bold">{employer.name}</span>
 
-      <div className="mt-auto flex flex-row gap-1 self-end">
-        {employer.tecnologies.map(({ tecnology: { iconUrl } }, i) => (
-          <TecnologyLogo key={i} url={iconUrl} />
-        ))}
-      </div>
+        <div className="mt-auto flex flex-row gap-1 self-end">
+          {employer.tecnologies.map(({ tecnology: { iconUrl } }, i) => (
+            <TecnologyLogo key={i} url={iconUrl} />
+          ))}
+        </div>
 
-      <span className="text-xs self-end">
-        {`${startDate.format('MMM YYYY')} - ${timeEnd.format('MMM YYYY')}`}
-      </span>
-      <button className="rounded-md bg-accentBg text-onAccentBg">
-        more detail
-      </button>
-    </div>
+        <span className="text-xs self-end">
+          {`${startDate.format('MMM YYYY')} - ${timeEnd.format('MMM YYYY')}`}
+        </span>
+        <JobDetailModal employer={employer} />
+      </div>
+    </>
   )
 }

@@ -5,9 +5,9 @@ import { HiDocumentText } from 'react-icons/hi2'
 export default function Footer({ className }: { className?: string }) {
   return (
     <footer
-      className={`grid grid-cols-3 p-10 bg-neutral text-neutral-content ${className}`}
+      className={`grid grid-col-1 md:grid-cols-3 gap-4 p-10 bg-neutral text-neutral-content opacity-75 ${className}`}
     >
-      <div className="col-start-2 col-span-1 flex flex-col gap-2 items-center">
+      <div className="md:col-start-2 md:col-span-1 flex flex-col gap-2 items-center">
         <span className="font-bold">Links</span>
         <div className="flex gap-4">
           <Link
@@ -31,7 +31,7 @@ export default function Footer({ className }: { className?: string }) {
           </Link>
         </div>
       </div>
-      <div className="flex justify-end">
+      <div className="flex md:justify-end">
         <div className="flex flex-col gap-2">
           <svg
             width="50"

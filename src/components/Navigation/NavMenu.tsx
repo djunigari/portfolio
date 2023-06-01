@@ -12,7 +12,7 @@ export function NavMenu() {
     { name: t('educations'), href: '#educations' },
     { name: t('courses'), href: '#courses' },
     { name: t('about'), href: '#about' },
-    { name: t('contacts'), href: '#contacts' },
+    { name: t('contacts'), href: '/contacts' },
   ]
 
   const [anchor, setAnchor] = useState('')

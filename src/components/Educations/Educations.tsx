@@ -1,10 +1,17 @@
 import { prisma } from '@/utils/prisma'
+import { Education } from '@prisma/client'
 import moment from 'moment'
 
 export async function Educations() {
-  const educations = await prisma.education.findMany({
-    orderBy: { startAt: 'desc' },
-  })
+  let educations: Education[] = []
+  try {
+    educations = await prisma.education.findMany({
+      orderBy: { startAt: 'desc' },
+    })
+  } catch (e: any) {
+    console.error('Educations', e.message)
+    educations = []
+  }
 
   return (
     <div className="flex flex-col gap-2 divide-y w-full rounded-md bg-mutedBg text-onMutedBg p-2 shadow-black shadow-md">

@@ -17,11 +17,13 @@ export const metadata = {
 
 interface LocaleLayoutProps {
   children: ReactNode
+  modal: ReactNode
   params: { locale: string }
 }
 
 export default async function LocaleLayout({
   children,
+  modal,
   params: { locale },
 }: LocaleLayoutProps) {
   let messages

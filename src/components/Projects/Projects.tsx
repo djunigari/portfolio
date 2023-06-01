@@ -1,13 +1,24 @@
 import { prisma } from '@/utils/prisma'
+import { Project, TecnologiesOnProjects, Tecnology } from '@prisma/client'
 import Link from 'next/link'
 import { BsGithub } from 'react-icons/bs'
 import { TbWorldWww } from 'react-icons/tb'
 import { Skills } from '../Skills/Skills'
 
 export async function Projects() {
-  const projects = await prisma.project.findMany({
-    include: { tecnologies: { include: { tecnology: true } } },
-  })
+  let projects: (Project & {
+    tecnologies: (TecnologiesOnProjects & {
+      tecnology: Tecnology
+    })[]
+  })[]
+  try {
+    projects = await prisma.project.findMany({
+      include: { tecnologies: { include: { tecnology: true } } },
+    })
+  } catch (error: any) {
+    console.log('Projects', error.message)
+    projects = []
+  }
 
   return (
     <div className="flex flex-col gap-2 w-full ">
