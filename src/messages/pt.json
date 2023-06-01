@@ -17,6 +17,10 @@
       "educations": "Formaçōes",
       "courses": "Cursos",
       "projects": "Projetos"
+    },
+    "jobs": {
+      "more": "mais",
+      "moreDetails": "Mais Detalhes"
     }
   },
   "about": {

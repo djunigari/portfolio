@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { useEffect, useState, useTransition } from 'react'
 import { Job } from './Job'
 import { EmployerWithTecnologies, JobsResponseData } from './Jobs'
 
@@ -9,13 +10,14 @@ interface JobListProps {
 }
 
 export function JobList({ search }: JobListProps) {
+  const t = useTranslations('layout.jobs')
   const [loading, setLoading] = useState<boolean>(true)
   const [employers, setEmployers] = useState<EmployerWithTecnologies[]>([])
   const [lastCursor, setLastCursor] = useState<string>('')
   const [hasNextPage, setHasNextPage] = useState<boolean>(true)
+  const [isPending, startTransition] = useTransition()
 
   const getMoreData = () => {
-    console.log(lastCursor)
     search(lastCursor).then(
       ({ data, metaData: { lastCursor, hasNextPage } }) => {
         setEmployers((prev) => [...prev, ...data])
@@ -44,8 +46,16 @@ export function JobList({ search }: JobListProps) {
         ))}
       </div>
       {hasNextPage && (
-        <button className="mt-2" onClick={getMoreData}>
-          More
+        <button
+          disabled={isPending}
+          className="btn btn-sm btn-outline mt-4"
+          onClick={() => startTransition(() => getMoreData())}
+        >
+          {isPending ? (
+            <span className="loading loading-dots loading-xs"></span>
+          ) : (
+            t('more')
+          )}
         </button>
       )}
     </div>

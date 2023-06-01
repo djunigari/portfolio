@@ -1,6 +1,7 @@
 'use client'
 
 import moment from 'moment'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import Modal from '../Utils/Modal'
 import { EmployerWithTecnologies } from './Jobs'
@@ -10,6 +11,7 @@ const JobDetailModal = ({
 }: {
   employer: EmployerWithTecnologies
 }) => {
+  const t = useTranslations('layout.jobs')
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const startDate = moment(employer.startAt)
   const timeEnd = moment(employer.endAt)
@@ -29,7 +31,7 @@ const JobDetailModal = ({
   return (
     <>
       <button className="btn btn-outline" onClick={onOpen}>
-        more detail
+        {t('moreDetails')}
       </button>
       <Modal isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
         <div className="flex flex-col items-start">
