@@ -56,6 +56,7 @@ const createEmployers = async () => {
         language: 'en',
         name: e.name,
         position: e.position,
+        location: e.location,
         description: e.description,
         site: e.site,
         logoImageUrl: e.logoImageUrl,

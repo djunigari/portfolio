@@ -18,11 +18,14 @@ module.exports = {
       sm: '675px',
     },
     extend: {
+      // https://www.esz.co.jp/blog/2766.html
       backgroundColor: {
         'gradient-dots': 'var(--b3)',
       },
       backgroundImage: {
         'gradient-dots': 'radial-gradient(hsl(var(--b1)) 1px, transparent 0)',
+        'gradient-linear':
+          'repeating-linear-gradient(-45deg,transparent,transparent 2px,black 4px,black 4px)',
       },
       backgroundSize: {
         'gradient-dots': '2px 2px',

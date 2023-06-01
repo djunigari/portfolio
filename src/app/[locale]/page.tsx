@@ -16,6 +16,7 @@ export default function Home() {
       <div id="about" className="w-full">
         <About />
       </div>
+      <div className="divider"></div>
       <section id="projects" className="w-full">
         <LayoutTitle title="projects" />
         <Suspense fallback={<p>Loading...</p>}>
@@ -23,10 +24,12 @@ export default function Home() {
           <Projects />
         </Suspense>
       </section>
+      <div className="divider"></div>
       <section id="jobs" className="w-full">
         <LayoutTitle title="jobs" />
         <Jobs />
       </section>
+      <div className="divider"></div>
       <section id="educations" className="w-full">
         <LayoutTitle title="educations" />
         <Suspense fallback={<p>Loading...</p>}>
@@ -34,6 +37,7 @@ export default function Home() {
           <Educations />
         </Suspense>
       </section>
+      <div className="divider"></div>
       <section id="courses" className="w-full">
         <LayoutTitle title="courses" />
         <Suspense fallback={<p>Loading...</p>}>
