@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navigation/Navbar'
+import { ReduxProviders } from '@/redux/provider'
 import { NextIntlClientProvider } from 'next-intl'
 import { ReactNode } from 'react'
 import Footer from './footer'
@@ -23,7 +24,6 @@ interface LocaleLayoutProps {
 
 export default async function LocaleLayout({
   children,
-  modal,
   params: { locale },
 }: LocaleLayoutProps) {
   let messages
@@ -48,8 +48,10 @@ export default async function LocaleLayout({
         ></div>
 
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
-          <main className="max-w-3xl px-4 md:mx-auto ">{children}</main>
+          <ReduxProviders>
+            <Navbar />
+            <main className="max-w-3xl px-4 md:mx-auto ">{children}</main>
+          </ReduxProviders>
         </NextIntlClientProvider>
 
         {/* <ContactButton />

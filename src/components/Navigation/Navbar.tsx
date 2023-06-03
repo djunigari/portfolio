@@ -1,3 +1,4 @@
+import ContactSideBar from '../Contact/ContactSideBar'
 import { LanguageDropDown } from '../Internationalization/Dropdown/LanguageDropDown'
 import { ThemeSwitch } from '../Theme/ThemeSwitch'
 import { NavMenu } from './NavMenu'
@@ -19,6 +20,7 @@ export default function Navbar() {
         <ThemeSwitch />
       </nav>
       <div className="h-16 w-full"></div>
+      <ContactSideBar />
     </>
   )
 }

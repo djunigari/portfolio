@@ -2,7 +2,7 @@ export function ContactForm() {
   return (
     <div className="">
       <div className="flex flex-col text-center w-full mb-12">
-        <h1 className="">Contact Us</h1>
+        <h1 className="font-bold text-lg mb-2">Contact Us</h1>
         <p className="">
           Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
           gentrify.
