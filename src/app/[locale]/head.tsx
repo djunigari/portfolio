@@ -1,3 +1,9 @@
+import Analytics from '../googleAnalytics'
+
 export default function Head() {
-  return <></>
+  return (
+    <head>
+      <Analytics />
+    </head>
+  )
 }

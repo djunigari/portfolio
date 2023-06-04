@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { ReactNode } from 'react'
 import Footer from './footer'
 import './globals.css'
+import Head from './head'
 import notFound from './not-found'
 
 export const metadata = {
@@ -35,6 +36,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} data-theme="luxury">
+      <Head />
       <body className="min-h-screen bg-gradient-dots overflow-scroll overscroll-none">
         <div
           className={`
