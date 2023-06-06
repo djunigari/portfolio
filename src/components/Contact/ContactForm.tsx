@@ -2,6 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { BsTelephone } from 'react-icons/bs'
 import { MdAlternateEmail } from 'react-icons/md'
 import { z } from 'zod'
 
@@ -85,11 +86,15 @@ export function ContactForm() {
       </form>
 
       <div className="divider">OR</div>
-      <div className="flex flex-col text-center w-full mb-12">
-        <MdAlternateEmail className="h-8 w-8" />
-        <span>E-mail: igaridjun@gmail.com</span>
-
-        <span>Phone: +81 080 5850 5729</span>
+      <div className="flex flex-col gap-2 items-center">
+        <div className="flex items-center gap-2">
+          <MdAlternateEmail className="h-4 w-4" />
+          <span>igaridjun@gmail.com</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <BsTelephone className="h-4 w-4" />
+          <span>+81 080 5850 5729</span>
+        </div>
       </div>
     </div>
   )
