@@ -22,8 +22,7 @@ export function Jobs() {
   const search = async (lastCursor?: string): Promise<JobsResponseData> => {
     'use server'
     const res = await fetch(
-      `${api}${lastCursor ? `?lastCursor=${lastCursor}` : ''}`,
-      { next: { revalidate: 24 * 60 * 60 } },
+      `${api}?take=3&${lastCursor ? `lastCursor=${lastCursor}` : ''}`,
     )
     return await res.json()
   }
