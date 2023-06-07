@@ -23,7 +23,8 @@
       "moreDetails": "More Details"
     },
     "contact": {
-      "send": "Send"
+      "send": "Send",
+      "emailSentSuccessfully": "Email sent successfully!"
     }
   },
   "about": {
