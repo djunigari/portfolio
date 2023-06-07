@@ -1,6 +1,9 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import axios from 'axios'
+import { useTranslations } from 'next-intl'
+import { useTransition } from 'react'
 import { useForm } from 'react-hook-form'
 import { BsTelephone } from 'react-icons/bs'
 import { MdAlternateEmail } from 'react-icons/md'
@@ -30,29 +33,40 @@ const createMessageFormSchema = z.object({
 type CreateMessageFormData = z.infer<typeof createMessageFormSchema>
 
 export function ContactForm() {
+  const t = useTranslations('layout.contact')
+  const [isPending, startTransition] = useTransition()
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<CreateMessageFormData>({
     resolver: zodResolver(createMessageFormSchema),
   })
 
-  const createUser = (data: any) => {
-    JSON.stringify(data, null, 2)
+  const sendMessage = async (data: any) => {
+    startTransition(async () => {
+      const url = '/api/send-email'
+      const response = await axios.post(url, data)
+      if (response.status === 200) {
+        console.log(response.data)
+        reset()
+      } else console.error('SendMessageError', response.data)
+    })
   }
 
   return (
     <div className="">
       <h1 className="font-bold text-lg mb-2">Contact Me</h1>
 
-      <form onSubmit={handleSubmit(createUser)}>
+      <form onSubmit={handleSubmit(sendMessage)}>
         <div>
           <label htmlFor="name" className="leading-7 text-sm text-gray-600">
             Name
           </label>
           <input
             type="text"
+            id="name"
             className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             {...register('name')}
           />
@@ -65,6 +79,7 @@ export function ContactForm() {
           </label>
           <input
             type="email"
+            id="email"
             className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             {...register('email')}
           />
@@ -76,13 +91,20 @@ export function ContactForm() {
             Message
           </label>
           <textarea
+            id="message"
             className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
             {...register('message')}
           ></textarea>
           {errors.message && <span>{errors.message.message}</span>}
         </div>
 
-        <button className="btn btn-secondary self-end">Send</button>
+        <button disabled={isPending} className="btn btn-secondary self-end">
+          {isPending ? (
+            <span className="loading loading-dots loading-xs"></span>
+          ) : (
+            t('send')
+          )}
+        </button>
       </form>
 
       <div className="divider">OR</div>

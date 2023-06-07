@@ -21,6 +21,9 @@
     "jobs": {
       "more": "more",
       "moreDetails": "More Details"
+    },
+    "contact": {
+      "send": "Send"
     }
   },
   "about": {

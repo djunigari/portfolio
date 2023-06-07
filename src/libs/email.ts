@@ -21,10 +21,9 @@ export const sendEmail = async (data: EmailPayload) => {
     {
       from: process.env.SMTP_SENDER_EMAIL, // verified sender email
       to: process.env.SMTP_RECIPIENT_EMAIL, // recipient email
-      subject: 'Test message subject', // Subject line
-      text: 'Hello world!', // plain text body
-      html: '<b>Hello world!</b>', // html body
-      // ...data,
+      subject: data.subject,
+      text: data.to,
+      html: data.html,
     },
     function (error, info) {
       if (error) {
