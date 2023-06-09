@@ -1,8 +1,13 @@
 import { prisma } from '@/utils/prisma'
 
-async function findByCursor(take: number, lastCursor?: string | null) {
+async function findByCursor(
+  language: string,
+  take: number,
+  lastCursor?: string | null,
+) {
   return prisma.employer.findMany({
     include: { tecnologies: { include: { tecnology: true } } },
+    where: { language },
     take,
     ...(lastCursor && {
       skip: 1, // Skip the cursor
@@ -18,14 +23,14 @@ async function findByCursor(take: number, lastCursor?: string | null) {
 
 export async function GET(req: Request, res: Response) {
   const origin = req.headers.get('Origin')
-
   try {
     const { searchParams } = new URL(req.url as string)
+    const language = searchParams.get('language') || 'en'
     const takeParam = searchParams.get('take')
     const take = takeParam ? parseInt(takeParam as string) : 3
     const lastCursor = searchParams.get('lastCursor')
 
-    const employers = await findByCursor(take, lastCursor)
+    const employers = await findByCursor(language, take, lastCursor)
 
     if (employers.length === 0) {
       return new Response(
@@ -48,7 +53,7 @@ export async function GET(req: Request, res: Response) {
 
     const cursor = employers[employers.length - 1].id
 
-    const nextPage = await findByCursor(take, cursor)
+    const nextPage = await findByCursor(language, take, cursor)
 
     return new Response(
       JSON.stringify({
@@ -68,7 +73,12 @@ export async function GET(req: Request, res: Response) {
     )
   } catch (error: any) {
     return new Response(JSON.stringify({ error: error.message }), {
-      status: 403,
+      status: 500,
+      headers: {
+        'Access-Control-Allow-Origin':
+          origin || process.env.NODE_ENV !== 'production' ? '*' : '',
+        'Content-Type': 'application/json',
+      },
     })
   }
 }

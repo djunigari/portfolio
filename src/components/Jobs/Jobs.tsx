@@ -19,12 +19,22 @@ export interface JobsResponseData {
 }
 
 export function Jobs() {
-  const search = async (lastCursor?: string): Promise<JobsResponseData> => {
+  const search = async (
+    language: string,
+    lastCursor?: string,
+  ): Promise<JobsResponseData> => {
     'use server'
     const res = await fetch(
-      `${api}?take=3&${lastCursor ? `lastCursor=${lastCursor}` : ''}`,
+      `${api}?language=${language}&take=3&${
+        lastCursor ? `lastCursor=${lastCursor}` : ''
+      }`,
     )
-    return await res.json()
+    if (res.status === 200) return await res.json()
+    else
+      return {
+        data: [],
+        metaData: { total: 0, lastCursor: '', hasNextPage: false },
+      }
   }
 
   return <JobList search={search} />
