@@ -52,7 +52,6 @@ export function ContactForm() {
       const url = '/api/send-email'
       const response = await axios.post(url, data)
       if (response.status === 200) {
-        console.log(response.data)
         reset()
         notify()
       } else console.error('SendMessageError', response.data)

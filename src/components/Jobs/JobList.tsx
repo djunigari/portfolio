@@ -20,7 +20,6 @@ export function JobList({ search }: JobListProps) {
   const getMoreData = () => {
     search(lastCursor).then(
       ({ data, metaData: { lastCursor, hasNextPage } }) => {
-        console.log(data)
         setEmployers((prev) => [...prev, ...data])
         setLastCursor(lastCursor)
         setHasNextPage(hasNextPage)

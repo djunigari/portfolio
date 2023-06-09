@@ -17,6 +17,8 @@ async function findByCursor(take: number, lastCursor?: string | null) {
 }
 
 export async function GET(req: Request, res: Response) {
+  const origin = req.headers.get('Origin')
+
   try {
     const { searchParams } = new URL(req.url as string)
     const takeParam = searchParams.get('take')
@@ -34,7 +36,13 @@ export async function GET(req: Request, res: Response) {
             hasNextPage: false,
           },
         }),
-        { status: 200 },
+        {
+          headers: {
+            'Access-Control-Allow-Origin':
+              origin || process.env.NODE_ENV !== 'production' ? '*' : '',
+            'Content-Type': 'application/json',
+          },
+        },
       )
     }
 
@@ -42,7 +50,6 @@ export async function GET(req: Request, res: Response) {
 
     const nextPage = await findByCursor(take, cursor)
 
-    console.log('nextPage: ' + (nextPage.length > 0))
     return new Response(
       JSON.stringify({
         data: employers,
@@ -51,7 +58,13 @@ export async function GET(req: Request, res: Response) {
           hasNextPage: nextPage.length > 0,
         },
       }),
-      { status: 200 },
+      {
+        headers: {
+          'Access-Control-Allow-Origin':
+            origin || process.env.NODE_ENV !== 'production' ? '*' : '',
+          'Content-Type': 'application/json',
+        },
+      },
     )
   } catch (error: any) {
     return new Response(JSON.stringify({ error: error.message }), {
