@@ -37,6 +37,7 @@ export function ContactForm() {
   const t = useTranslations('layout.contact')
   const [isPending, startTransition] = useTransition()
   const notify = () => toast.success(t('emailSentSuccessfully'))
+  const errorToast = () => toast.error('')
 
   const {
     register,
@@ -54,7 +55,9 @@ export function ContactForm() {
       if (response.status === 200) {
         reset()
         notify()
-      } else console.error('SendMessageError', response.data)
+      } else {
+        errorToast()
+      }
     })
   }
 
