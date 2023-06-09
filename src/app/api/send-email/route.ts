@@ -1,8 +1,11 @@
 import { sendEmail } from '@/libs/email'
 import { render } from '@react-email/render'
 import MessageFromPortfolioTemplate from '../../../../emails/MessageFromPortfolioTemplate'
+import { checkLimiter } from '../config/checkLimiter'
+import { limiter } from './config/limiter'
 
 export async function POST(req: Request, res: Response) {
+  await checkLimiter(limiter)
   try {
     const { name, email, message } = await req.json()
     await sendEmail({
