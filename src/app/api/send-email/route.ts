@@ -5,6 +5,7 @@ import { checkLimiter } from '../config/checkLimiter'
 import { limiter } from './config/limiter'
 
 export async function POST(req: Request, res: Response) {
+  const origin = req.headers.get('Origin')
   await checkLimiter(limiter)
   try {
     const { name, email, message } = await req.json()
@@ -31,8 +32,9 @@ export async function POST(req: Request, res: Response) {
       },
     )
   } catch (error: any) {
+    console.log(error.message)
     return new Response(JSON.stringify({ error: error.message }), {
-      status: 403,
+      status: 500,
     })
   }
 }

@@ -43,7 +43,6 @@ export function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<CreateMessageFormData>({
     resolver: zodResolver(createMessageFormSchema),
   })
@@ -53,7 +52,6 @@ export function ContactForm() {
       const url = '/api/send-email'
       const response = await axios.post(url, data)
       if (response.status === 200) {
-        reset()
         notify()
       } else {
         errorToast()
