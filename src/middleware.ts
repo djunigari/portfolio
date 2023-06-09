@@ -15,7 +15,7 @@ export default async function middleware(request: NextRequest) {
   const regex = /\/api\/*/
 
   if (regex.test(request.url)) {
-    if (origin && !allowedOrigins.includes(origin)) {
+    if (!origin || !allowedOrigins.includes(origin)) {
       return new Response(null, {
         status: 400,
         statusText: 'Bad Request',
