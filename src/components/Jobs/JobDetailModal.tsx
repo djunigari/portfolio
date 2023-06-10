@@ -4,7 +4,7 @@ import moment from 'moment'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import Modal from '../Utils/Modal'
-import { EmployerWithTecnologies } from './Jobs'
+import { EmployerWithTecnologies } from './Actions'
 
 const JobDetailModal = ({
   employer,
