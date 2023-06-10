@@ -18,8 +18,8 @@ export function About() {
   return (
     <div className="flex flex-col sm:flex-row items-center p-2">
       <div className="flex flex-col w-full sm:w-1/2 justify-center items-center p-8">
-        <div className="radial-progress" style={{ '--value': 70 }}>
-          70%
+        <div className="radial-progress" style={{ '--value': 90 }}>
+          90%
         </div>
         <span>BUILDING....</span>
       </div>

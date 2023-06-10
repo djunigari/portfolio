@@ -19,6 +19,8 @@ export default async function middleware(request: NextRequest) {
       process.env.NODE_ENV === 'production' &&
       (!origin || !allowedOrigins.includes(origin))
     ) {
+      console.log(allowedOrigins)
+      console.log('origin:', origin)
       return new Response(null, {
         status: 400,
         statusText: 'Bad Request',
