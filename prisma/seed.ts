@@ -53,7 +53,7 @@ const createEmployers = async () => {
     const e = employersJson.list[i]
     const employer = await prisma.employer.create({
       data: {
-        language: 'en',
+        language: e.language,
         name: e.name,
         position: e.position,
         location: e.location,

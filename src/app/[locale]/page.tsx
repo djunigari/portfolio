@@ -19,10 +19,7 @@ export default function Home() {
       <div className="divider"></div>
       <section id="projects" className="w-full">
         <LayoutTitle title="projects" />
-        <Suspense fallback={<p>Loading...</p>}>
-          {/* @ts-expect-error Async Server Component */}
-          <Projects />
-        </Suspense>
+        <Projects />
       </section>
       <div className="divider"></div>
       <section id="jobs" className="w-full">

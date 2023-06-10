@@ -34,6 +34,42 @@
         "Next-intl",
         "TypeScript"
       ]
+    },
+    {
+      "language": "pt",
+      "name": "Catalogo Japão",
+      "description": "Desenvolvimento de uma \"Lista telefônica\" online para a comunidade brasileira no Japão. O principal serviço do aplicativo é facilitar a busca por serviços oferecidos pelos brasileiros e fornecer seus dados de contato.",
+      "url": "https://catalogo.jp/",
+      "gitHubUrl": "https://github.com/djunigari/catalogo-nextjs12",
+      "tecnologies": [
+        "React.js",
+        "Next.js",
+        "Nest.js",
+        "GraphQL",
+        "Chakra UI",
+        "Recoil",
+        "NextAuth",
+        "TypeORM",
+        "MongoDB",
+        "Firebase",
+        "TypeScript"
+      ]
+    },
+    {
+      "language": "pt",
+      "name": "Portfolio",
+      "description": "Desenvolvimento de um portfólio base utilizando as mais recentes tecnologias",
+      "url": "https://alexandreigari.com/",
+      "gitHubUrl": "https://github.com/djunigari/portfolio",
+      "tecnologies": [
+        "React.js",
+        "Next.js",
+        "Prisma",
+        "Tailwindcss",
+        "Next-intl",
+        "TypeScript",
+        "Redux"
+      ]
     }
   ]
 }

@@ -59,6 +59,66 @@
       "startAt": "2011-05-01",
       "endAt": "2012-08-01",
       "tecnologies": ["C#", "VB", "Action Script"]
+    },
+    {
+      "language": "pt",
+      "name": "RysEducation",
+      "position": "Java Full-Stack ",
+      "location": "Auckland, New Zealand",
+      "description": "Contratado para corrigir autenticação do site. No entanto, mais tarde fui contratado para atualizar o projeto usando como principais frameworks o Spring Boot e Spring Security.",
+      "site": "",
+      "logoImageUrl": "",
+      "startAt": "2017-05-01",
+      "endAt": "2017-07-01",
+      "tecnologies": ["Java", "Spring", "HTML", "CSS"]
+    },
+    {
+      "language": "pt",
+      "name": "UOL - Universo Online",
+      "position": "Java Backend",
+      "location": "São Paulo, Brasil",
+      "description": "Contratado como Desenvolvedor Java no departamento de Billing da UOL. Principais atividades era criação de serviços web para disponibilizar e conectar com os outros departamentos .Outras responsabilidades era encontrar e corrigir bugs que eram reportados por clientes. Criar novos testes e refatorar testes antigos.",
+      "site": "https://www.uol.com.br",
+      "logoImageUrl": "/images/employers-logos/uol.jpeg",
+      "startAt": "2015-01-01",
+      "endAt": "2016-07-01",
+      "tecnologies": ["Java", "Spring", "Git"]
+    },
+    {
+      "language": "pt",
+      "name": "Bull",
+      "position": "Java Full-Stack",
+      "location": "São Paulo, Brasil",
+      "description": "Contratado como Desenvolvedor Java envolvido em projetos de telecomunicações utilizando JavaEE e Sql Server. Principais atividades eram desenvolver regras de negócios, painéis, relatórios, interfaces usando o framework ZK, planejava, implementava POCs e corrigia bugs.",
+      "site": "https://www.bull.com",
+      "logoImageUrl": "/images/employers-logos/bull.webp",
+      "startAt": "2012-11-01",
+      "endAt": "2015-01-01",
+      "tecnologies": ["Java", "HTML", "CSS"]
+    },
+    {
+      "language": "pt",
+      "name": "Amplio Consultoria e Tecnologia",
+      "position": "Java Full-Stack",
+      "location": "São Paulo, Brasil",
+      "description": "A equipe teve a responsabilidade de desenvolver soluções utilizando a tecnologia RFID. A arquitetura foi baseada em JPA 2.0(EclipseLink e Hibernate), JSF 2, PrimeFaces 3.3, API XStream, Servidor GlassFish e SGBD Postgresql.",
+      "site": "http://www.amplio.com.br",
+      "logoImageUrl": "/images/employers-logos/amplio.png",
+      "startAt": "2012-09-01",
+      "endAt": "2012-11-01",
+      "tecnologies": ["Java", "PostgreSQL"]
+    },
+    {
+      "language": "pt",
+      "name": "SWDEV",
+      "position": "Estágio C#",
+      "location": "São Paulo, Brasil",
+      "description": "Nosso cliente  em sua revista publicava dados como balanços e análises para seus clientes. Trabalhamos com uma empresa financeira chilena para desenvolver um WebService, que foi utilizado C#.NET e SQL Server. Além disso, foi criado um aplicativo Excel (VBA) para testar todos os serviços.",
+      "site": "",
+      "logoImageUrl": "/images/employers-logos/swdev.jpeg",
+      "startAt": "2011-05-01",
+      "endAt": "2012-08-01",
+      "tecnologies": ["C#", "VB", "Action Script"]
     }
   ]
 }

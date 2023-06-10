@@ -1,31 +1,33 @@
-import { prisma } from '@/utils/prisma'
-import { Project, TecnologiesOnProjects, Tecnology } from '@prisma/client'
+'use client'
+
+import { useLocale } from 'next-intl'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { BsGithub } from 'react-icons/bs'
 import { TbWorldWww } from 'react-icons/tb'
 import { Skills } from '../Skills/Skills'
+import { ProjectWithTecnologies, findProjects } from './Actions'
 
-export async function Projects() {
-  let projects: (Project & {
-    tecnologies: (TecnologiesOnProjects & {
-      tecnology: Tecnology
-    })[]
-  })[]
-  try {
-    projects = await prisma.project.findMany({
-      include: { tecnologies: { include: { tecnology: true } } },
+export function Projects() {
+  const locale = useLocale()
+  const [loading, setLoading] = useState<boolean>(true)
+  const [projects, setProjects] = useState<ProjectWithTecnologies[]>([])
+
+  useEffect(() => {
+    findProjects(locale).then((list) => {
+      setProjects(list)
+      setLoading(false)
     })
-  } catch (error: any) {
-    console.log('Projects', error.message)
-    projects = []
-  }
+  }, [locale])
+
+  if (loading) return <p>Loading Projects....</p>
 
   return (
     <div className="flex flex-col gap-2 w-full ">
       {projects.map((p, i) => (
         <div
           key={i}
-          className="flex flex-col rounded-md p-2 shadow-black shadow-md"
+          className="flex flex-col gap-4 rounded-md p-2 shadow-black shadow-md"
         >
           <div className="flex items-center gap-2">
             <span className="text-md font-bold mr-auto">{p.name}</span>

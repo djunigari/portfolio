@@ -23,6 +23,9 @@
       "moreDetails": "More Details"
     },
     "contact": {
+      "title": "Contact Me",
+      "name": "Name",
+      "message": "Message",
       "send": "Send",
       "emailSentSuccessfully": "Email sent successfully!"
     }

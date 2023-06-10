@@ -1,10 +1,12 @@
 {
   "navigation": {
-    "Projects": "Projects",
-    "Works": "Works",
+    "home": "Home",
+    "projects": "Projects",
+    "jobs": "Jobs",
     "courses": "Courses",
-    "About": "About",
-    "Contact": "Contact"
+    "educations": "Educations",
+    "about": "About",
+    "contacts": "Contact"
   },
   "language": {
     "chooseLanguage": "言語"
@@ -15,10 +17,21 @@
       "educations": "Educations",
       "courses": "Courses",
       "projects": "Projects"
+    },
+    "jobs": {
+      "more": "more",
+      "moreDetails": "More Details"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "name": "Name",
+      "message": "Message",
+      "send": "Send",
+      "emailSentSuccessfully": "Email sent successfully!"
     }
   },
-  "welcome": {
-    "helloWorld": "Hello World!",
-    "happyYear": "Happy { year }!"
+  "about": {
+    "name": "Hi, my name is Alexandre Djun Igari.",
+    "resume": "I have 7 years of experience in software development."
   }
 }

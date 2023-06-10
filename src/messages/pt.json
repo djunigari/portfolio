@@ -23,6 +23,9 @@
       "moreDetails": "Mais Detalhes"
     },
     "contact": {
+      "title": "Entre em Contato",
+      "name": "Nome",
+      "message": "Mensagem",
       "send": "Enviar",
       "emailSentSuccessfully": "E-mail enviado com sucesso!"
     }

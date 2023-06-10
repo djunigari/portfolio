@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form'
 import { BsTelephone } from 'react-icons/bs'
 import { MdAlternateEmail } from 'react-icons/md'
 import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { z } from 'zod'
 
 const createMessageFormSchema = z.object({
@@ -73,12 +74,12 @@ export function ContactForm() {
       />
 
       <div className="">
-        <h1 className="font-bold text-lg mb-2">Contact Me</h1>
+        <h1 className="font-bold text-lg mb-2">{t('title')}</h1>
 
         <form onSubmit={handleSubmit(sendMessage)}>
           <div>
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
-              Name
+              {t('name')}
             </label>
             <input
               type="text"
@@ -107,7 +108,7 @@ export function ContactForm() {
               htmlFor="message"
               className="leading-7 text-sm text-gray-600"
             >
-              Message
+              {t('message')}
             </label>
             <textarea
               id="message"
