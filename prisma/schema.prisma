@@ -69,6 +69,7 @@ model TecnologiesOnProjects {
 
 model Education {
   id String @id @default(uuid())
+  language String @default("en")
   name String
   site String?
   logoImageUrl String?

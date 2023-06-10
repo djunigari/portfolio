@@ -1,6 +1,7 @@
 {
   "list": [
     {
+      "language": "en",
       "name": "Faculdade de Tecnologia de São Paulo - FATEC-SP",
       "site": "http://www.fatecsp.br/",
       "degree": "Bachelor of Technology (B.Tech.)",
@@ -9,6 +10,7 @@
       "endAt": "2013-12-31"
     },
     {
+      "language": "en",
       "name": "Escola Técnica Estadual de São Paulo - ETESP",
       "site": "http://www.etesaopaulo.com.br/",
       "degree": "Technician/Associate Degree",
@@ -17,9 +19,36 @@
       "endAt": "2009-12-31"
     },
     {
+      "language": "en",
       "name": "Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - IFSP",
       "site": "https://www.ifsp.edu.br/",
       "degree": "High School",
+      "startAt": "2007-01-01",
+      "endAt": "2009-12-31"
+    },
+    {
+      "language": "pt",
+      "name": "Faculdade de Tecnologia de São Paulo - FATEC-SP",
+      "site": "http://www.fatecsp.br/",
+      "degree": "Tecnólogo",
+      "field": "Análise e Desenvolvimento de Sistemas",
+      "startAt": "2010-07-01",
+      "endAt": "2013-12-31"
+    },
+    {
+      "language": "pt",
+      "name": "Escola Técnica Estadual de São Paulo - ETESP",
+      "site": "http://www.etesaopaulo.com.br/",
+      "degree": "Técnico",
+      "field": "Informática",
+      "startAt": "2008-07-01",
+      "endAt": "2009-12-31"
+    },
+    {
+      "language": "pt",
+      "name": "Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - IFSP",
+      "site": "https://www.ifsp.edu.br/",
+      "degree": "Ensino Médio",
       "startAt": "2007-01-01",
       "endAt": "2009-12-31"
     }

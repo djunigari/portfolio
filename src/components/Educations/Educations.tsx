@@ -1,17 +1,24 @@
-import { prisma } from '@/utils/prisma'
+'use client'
+
 import { Education } from '@prisma/client'
 import moment from 'moment'
+import { useLocale } from 'next-intl'
+import { useEffect, useState } from 'react'
+import { findEducation } from './Actions'
 
-export async function Educations() {
-  let educations: Education[] = []
-  try {
-    educations = await prisma.education.findMany({
-      orderBy: { startAt: 'desc' },
+export function Educations() {
+  const locale = useLocale()
+  const [loading, setLoading] = useState<boolean>(true)
+  const [educations, setEducations] = useState<Education[]>([])
+
+  useEffect(() => {
+    findEducation(locale).then((list) => {
+      setEducations(list)
+      setLoading(false)
     })
-  } catch (e: any) {
-    console.error('Educations', e.message)
-    educations = []
-  }
+  }, [locale])
+
+  if (loading) return <p>Loading Jobs....</p>
 
   return (
     <div className="flex flex-col gap-2 divide-y w-full rounded-md bg-mutedBg text-onMutedBg p-2 shadow-black shadow-md">

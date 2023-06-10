@@ -112,6 +112,7 @@ const createEducations = async () => {
   educationsJson.list.forEach(async (e) => {
     await prisma.education.create({
       data: {
+        language: e.language,
         name: e.name,
         site: e.site,
         degree: e.degree,
