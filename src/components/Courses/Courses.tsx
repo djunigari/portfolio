@@ -5,6 +5,7 @@ import moment from 'moment'
 import { useLocale } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { AcademyWithCourses, findAcademyWithCourses } from './Actions'
+import CoursesSkeleton from './Skeleton/CoursesSkeleton'
 
 export function Courses() {
   const locale = useLocale()
@@ -18,7 +19,7 @@ export function Courses() {
     })
   }, [locale])
 
-  if (loading) return <p>Loading Jobs....</p>
+  if (loading) return <CoursesSkeleton />
 
   return (
     <div className="flex flex-col gap-2 rounded-md divide-y bg-mutedBg text-onMutedBg p-2 shadow-black shadow-md">

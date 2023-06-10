@@ -7,6 +7,7 @@ import { BsGithub } from 'react-icons/bs'
 import { TbWorldWww } from 'react-icons/tb'
 import { Skills } from '../Skills/Skills'
 import { ProjectWithTecnologies, findProjects } from './Actions'
+import ListSkeleton from './Skeleton/ListSkeleton'
 
 export function Projects() {
   const locale = useLocale()
@@ -20,7 +21,7 @@ export function Projects() {
     })
   }, [locale])
 
-  if (loading) return <p>Loading Projects....</p>
+  if (loading) return <ListSkeleton />
 
   return (
     <div className="flex flex-col gap-2 w-full ">

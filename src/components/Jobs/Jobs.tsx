@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useEffect, useState, useTransition } from 'react'
 import { EmployerWithTecnologies, search } from './Actions'
 import { Job } from './Job'
+import { ListSkeleton } from './Skeleton/ListSkeleton'
 
 export function Jobs() {
   const locale = useLocale()
@@ -33,7 +34,7 @@ export function Jobs() {
     })
   }, [locale])
 
-  if (loading) return <p>Loading Jobs....</p>
+  if (loading) return <ListSkeleton />
 
   return (
     <div className="flex flex-col items-center w-full">
