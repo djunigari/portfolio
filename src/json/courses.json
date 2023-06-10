@@ -4,37 +4,86 @@
       "academy": "Caelum",
       "courses": [
         {
+          "language": "en",
           "name": "FJ11-Java and Object Oriented",
           "startAt": "2012-07-09",
           "completedAt": "2012-07-13"
         },
         {
+          "language": "en",
           "name": "FJ21-Java for Web Development",
           "startAt": "2012-07-16",
           "completedAt": "2012-07-20"
         },
         {
+          "language": "en",
           "name": "FJ16-Java Lab using Tests,XML and Design Patterns",
           "startAt": "2012-07-23",
           "completedAt": "2012-07-25"
         },
         {
+          "language": "en",
           "name": "Fj25-Persistence using JPA and Hibernate",
           "startAt": "2012-08-11",
           "completedAt": "2012-09-01"
         },
         {
+          "language": "en",
           "name": "FJ26- Web Lab using JSF and CDI",
           "startAt": "2012-09-08",
           "completedAt": "2012-10-06"
         },
         {
+          "language": "en",
           "name": "FJ31-Java EE Advanced and Web Services",
           "startAt": "2013-01-28",
           "completedAt": "2013-02-08"
         },
         {
+          "language": "en",
           "name": "FJ95-Design Patterns for good programmers",
+          "startAt": "2013-01-30",
+          "completedAt": "2013-02-19"
+        },
+        {
+          "language": "pt",
+          "name": "FJ11-Java e Orientação a Objetos",
+          "startAt": "2012-07-09",
+          "completedAt": "2012-07-13"
+        },
+        {
+          "language": "pt",
+          "name": "FJ21-Java para Desenvolvimento Web",
+          "startAt": "2012-07-16",
+          "completedAt": "2012-07-20"
+        },
+        {
+          "language": "pt",
+          "name": "FJ16-Laboratório Java com Testes,XML e Design Patterns",
+          "startAt": "2012-07-23",
+          "completedAt": "2012-07-25"
+        },
+        {
+          "language": "pt",
+          "name": "Fj25-Persistência com JPA e Hibernate",
+          "startAt": "2012-08-11",
+          "completedAt": "2012-09-01"
+        },
+        {
+          "language": "pt",
+          "name": "FJ26-Laboratório Web com JSF e CDI",
+          "startAt": "2012-09-08",
+          "completedAt": "2012-10-06"
+        },
+        {
+          "language": "pt",
+          "name": "FJ31-Java EE Avançado e Web Services",
+          "startAt": "2013-01-28",
+          "completedAt": "2013-02-08"
+        },
+        {
+          "language": "pt",
+          "name": "FJ95-Design Patterns para bons programadores",
           "startAt": "2013-01-30",
           "completedAt": "2013-02-19"
         }
@@ -44,27 +93,62 @@
       "academy": "Cod3r",
       "courses": [
         {
+          "language": "en",
           "name": "Complete Modern Web Course (Javascript 2022) + Projects",
           "startAt": "2022-02-01",
           "completedAt": "2022-04-01"
         },
         {
-          "name": "Next.js e React - Complete Course",
+          "language": "en",
+          "name": "Next.js and React - Complete Course",
           "startAt": "2022-04-01",
           "completedAt": "2022-06-01"
         },
         {
+          "language": "en",
           "name": "GraphQL: Creating Flexible and Professionals APIs",
           "startAt": "2022-06-01",
           "completedAt": "2022-08-01"
         },
         {
+          "language": "en",
           "name": "Regex - Regular Expression Courses",
           "startAt": "2022-02-01",
           "completedAt": "2023-03-01"
         },
         {
+          "language": "en",
           "name": "Docker: Essential tool for developers",
+          "startAt": "2022-05-01",
+          "completedAt": "2023-05-21"
+        },
+        {
+          "language": "pt",
+          "name": "Curso Web Moderno Completo com JavaScript 2022 + Projetos",
+          "startAt": "2022-02-01",
+          "completedAt": "2022-04-01"
+        },
+        {
+          "language": "pt",
+          "name": "Next.js e React - Curso Completo",
+          "startAt": "2022-04-01",
+          "completedAt": "2022-06-01"
+        },
+        {
+          "language": "pt",
+          "name": "GraphQL: Criando APIs Profissionais e Flexíveis",
+          "startAt": "2022-06-01",
+          "completedAt": "2022-08-01"
+        },
+        {
+          "language": "pt",
+          "name": "Fundamentos de Expressões Regulares (Regex)",
+          "startAt": "2022-02-01",
+          "completedAt": "2023-03-01"
+        },
+        {
+          "language": "pt",
+          "name": "Docker: Ferramenta essencial para Desenvolvedores",
           "startAt": "2022-05-01",
           "completedAt": "2023-05-21"
         }
@@ -74,31 +158,109 @@
       "academy": "New Zealand Language Centres",
       "courses": [
         {
+          "language": "en",
           "name": "General English Pre Intermediate",
           "startAt": "2016-08-01",
           "completedAt": "2016-10-07"
         },
         {
+          "language": "en",
           "name": "General English Intermediate 1",
           "startAt": "2016-10-10",
           "completedAt": "2016-12-16"
         },
         {
+          "language": "en",
           "name": "General English Intermediate 2",
           "startAt": "2017-01-04",
           "completedAt": "2017-02-03"
         },
         {
+          "language": "en",
           "name": "Cambridge Pre FCE",
           "startAt": "2017-02-07",
           "completedAt": "2017-03-10"
         },
         {
+          "language": "en",
           "name": "Cambridge FCE",
           "startAt": "2017-03-13",
           "completedAt": "2017-06-06"
         },
         {
+          "language": "en",
+          "name": "General English Advanced",
+          "startAt": "2017-06-12",
+          "completedAt": "2017-06-23"
+        },
+        {
+          "language": "en",
+          "name": "General English Pre Intermediate",
+          "startAt": "2016-08-01",
+          "completedAt": "2016-10-07"
+        },
+        {
+          "language": "en",
+          "name": "General English Intermediate 1",
+          "startAt": "2016-10-10",
+          "completedAt": "2016-12-16"
+        },
+        {
+          "language": "en",
+          "name": "General English Intermediate 2",
+          "startAt": "2017-01-04",
+          "completedAt": "2017-02-03"
+        },
+        {
+          "language": "en",
+          "name": "Cambridge Pre FCE",
+          "startAt": "2017-02-07",
+          "completedAt": "2017-03-10"
+        },
+        {
+          "language": "en",
+          "name": "Cambridge FCE",
+          "startAt": "2017-03-13",
+          "completedAt": "2017-06-06"
+        },
+        {
+          "language": "en",
+          "name": "General English Advanced",
+          "startAt": "2017-06-12",
+          "completedAt": "2017-06-23"
+        },
+        {
+          "language": "pt",
+          "name": "General English Pre Intermediate",
+          "startAt": "2016-08-01",
+          "completedAt": "2016-10-07"
+        },
+        {
+          "language": "pt",
+          "name": "General English Intermediate 1",
+          "startAt": "2016-10-10",
+          "completedAt": "2016-12-16"
+        },
+        {
+          "language": "pt",
+          "name": "General English Intermediate 2",
+          "startAt": "2017-01-04",
+          "completedAt": "2017-02-03"
+        },
+        {
+          "language": "pt",
+          "name": "Cambridge Pre FCE",
+          "startAt": "2017-02-07",
+          "completedAt": "2017-03-10"
+        },
+        {
+          "language": "pt",
+          "name": "Cambridge FCE",
+          "startAt": "2017-03-13",
+          "completedAt": "2017-06-06"
+        },
+        {
+          "language": "pt",
           "name": "General English Advanced",
           "startAt": "2017-06-12",
           "completedAt": "2017-06-23"

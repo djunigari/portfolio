@@ -139,6 +139,7 @@ const createCourses = async () => {
     item.courses.forEach(async (c) => {
       await prisma.course.create({
         data: {
+          language: c.language,
           name: c.name,
           startAt: new Date(c.startAt),
           completedAt: new Date(c.completedAt),

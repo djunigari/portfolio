@@ -1,10 +1,9 @@
 import { About } from '@/components/About/About'
-import { Academies } from '@/components/Courses/Academies'
+import { Courses } from '@/components/Courses/Courses'
 import { Educations } from '@/components/Educations/Educations'
 import { Jobs } from '@/components/Jobs/Jobs'
 import { LayoutTitle } from '@/components/LayoutTitle'
 import { Projects } from '@/components/Projects/Projects'
-import { Suspense } from 'react'
 
 export default function Home() {
   return (
@@ -34,10 +33,7 @@ export default function Home() {
       <div className="divider"></div>
       <section id="courses" className="w-full">
         <LayoutTitle title="courses" />
-        <Suspense fallback={<p>Loading...</p>}>
-          {/* @ts-expect-error Async Server Component */}
-          <Academies />
-        </Suspense>
+        <Courses />
       </section>
     </div>
   )

@@ -1,17 +1,25 @@
 'use client'
 
 import { Disclosure } from '@headlessui/react'
-import { Academy, Course } from '@prisma/client'
 import moment from 'moment'
+import { useLocale } from 'next-intl'
+import { useEffect, useState } from 'react'
+import { AcademyWithCourses, findAcademyWithCourses } from './Actions'
 
-interface AcademyWithCourse extends Academy {
-  courses: Course[]
-}
-interface CoursesProps {
-  academies: AcademyWithCourse[]
-}
+export function Courses() {
+  const locale = useLocale()
+  const [loading, setLoading] = useState<boolean>(true)
+  const [academies, setAcademies] = useState<AcademyWithCourses[]>([])
 
-export function Courses({ academies }: CoursesProps) {
+  useEffect(() => {
+    findAcademyWithCourses(locale).then((list) => {
+      setAcademies(list)
+      setLoading(false)
+    })
+  }, [locale])
+
+  if (loading) return <p>Loading Jobs....</p>
+
   return (
     <div className="flex flex-col gap-2 rounded-md divide-y bg-mutedBg text-onMutedBg p-2 shadow-black shadow-md">
       {academies.map((a, i) => (
