@@ -1,19 +1,53 @@
 'use client'
 
+import { Employer, TecnologiesOnEmployer, Tecnology } from '@prisma/client'
 import { useLocale, useTranslations } from 'next-intl'
 import { useEffect, useState, useTransition } from 'react'
-import { EmployerWithTecnologies, search } from './Actions'
 import { Job } from './Job'
 import { ListSkeleton } from './Skeleton/ListSkeleton'
+
+export type EmployerWithTecnologies = Employer & {
+  tecnologies: (TecnologiesOnEmployer & {
+    tecnology: Tecnology
+  })[]
+}
+
+export interface JobsResponseData {
+  data: EmployerWithTecnologies[]
+  metaData: {
+    total: number
+    lastCursor: string
+    hasNextPage: boolean
+  }
+}
+
+const API_JOBS = `/api/jobs`
 
 export function Jobs() {
   const locale = useLocale()
   const t = useTranslations('layout.jobs')
+
   const [loading, setLoading] = useState<boolean>(true)
   const [employers, setEmployers] = useState<EmployerWithTecnologies[]>([])
   const [lastCursor, setLastCursor] = useState<string>('')
   const [hasNextPage, setHasNextPage] = useState<boolean>(true)
   const [isPending, startTransition] = useTransition()
+
+  const search = async (
+    language: string,
+    lastCursor?: string,
+  ): Promise<JobsResponseData> => {
+    const url = `${API_JOBS}?language=${language}&take=3&${
+      lastCursor ? `lastCursor=${lastCursor}` : ''
+    }`
+    const res = await fetch(url, { method: 'GET', mode: 'cors' })
+    if (res.status === 200) return await res.json()
+    else
+      return {
+        data: [],
+        metaData: { total: 0, lastCursor: '', hasNextPage: false },
+      }
+  }
 
   const getMoreData = () => {
     search(locale, lastCursor).then(

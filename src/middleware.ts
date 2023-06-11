@@ -10,17 +10,15 @@ const allowedOrigins =
     : [process.env.NEXT_URL]
 
 export default async function middleware(request: NextRequest) {
-  const origin = request.headers.get('Origin')
-
+  const origin = request.headers.get('Origin') || request.headers.get('host')
   const regex = /\/api\/*/
 
   if (regex.test(request.url)) {
+    console.log('origin:', origin)
     if (
       process.env.NODE_ENV === 'production' &&
       (!origin || !allowedOrigins.includes(origin))
     ) {
-      console.log(allowedOrigins)
-      console.log('origin:', origin)
       return new Response(null, {
         status: 400,
         statusText: 'Bad Request',
