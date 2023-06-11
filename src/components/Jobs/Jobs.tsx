@@ -40,7 +40,7 @@ export function Jobs() {
     const url = `${API_JOBS}?language=${language}&take=3&${
       lastCursor ? `lastCursor=${lastCursor}` : ''
     }`
-    const res = await fetch(url, { method: 'GET', mode: 'cors' })
+    const res = await fetch(url, { method: 'GET', credentials: 'include' })
     if (res.status === 200) return await res.json()
     else
       return {
