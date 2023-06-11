@@ -10,7 +10,12 @@ const allowedOrigins =
     : [process.env.NEXT_URL]
 
 export default async function middleware(request: NextRequest) {
-  const origin = request.headers.get('Origin') || request.headers.get('host')
+  const origin =
+    request.headers.get('Origin') ||
+    `${request.headers.get('x-forwarded-proto')}://${request.headers.get(
+      'host',
+    )}`
+
   const regex = /\/api\/*/
 
   if (regex.test(request.url)) {
