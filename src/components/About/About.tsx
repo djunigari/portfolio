@@ -1,5 +1,5 @@
 'use client'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { HiDocumentText } from 'react-icons/hi2'
@@ -14,6 +14,7 @@ const list: string[] = [
 ]
 
 export function About() {
+  const locale = useLocale()
   const t = useTranslations('about')
   return (
     <div className="flex flex-col sm:flex-row items-center p-2">
@@ -47,7 +48,7 @@ export function About() {
                   <BsGithub className="h-6 w-6 md:h-8 md:w-8 cursor-pointer hover:text-onHoverPrimaryBg" />
                 </Link>
                 <Link
-                  href={'/resume/resume-en.pdf'}
+                  href={`/resume/resume-${locale}.pdf`}
                   target="_blank"
                   rel="noreferrer"
                 >
