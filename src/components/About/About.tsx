@@ -20,7 +20,8 @@ export function About() {
   const print = async () => {
     const res = await fetch('http://localhost:3034/receipt/1')
     console.log(res)
-    console.log(res.json())
+    const data = await res.json()
+    console.log(data)
   }
   return (
     <div className="flex flex-col sm:flex-row items-center p-2">
