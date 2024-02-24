@@ -16,8 +16,14 @@ const list: string[] = [
 export function About() {
   const locale = useLocale()
   const t = useTranslations('about')
+
+  const print = async () => {
+    const res = await fetch('http://localhost:3034/receipt/1')
+    console.log(res)
+  }
   return (
     <div className="flex flex-col sm:flex-row items-center p-2">
+      <button onClick={print}>Imprimir</button>
       <div className="flex flex-col w-full sm:w-1/2 justify-center items-center p-8">
         <div className="radial-progress" style={{ '--value': 90 }}>
           90%
