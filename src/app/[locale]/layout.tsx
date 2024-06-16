@@ -1,11 +1,11 @@
 import Navbar from '@/components/Navigation/Navbar'
 import { ReduxProviders } from '@/redux/provider'
 import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 import { ReactNode } from 'react'
 import Footer from './footer'
 import './globals.css'
 import Head from './head'
-import notFound from './not-found'
 
 export const metadata = {
   title: 'Alexandre Djun Igari',
@@ -27,12 +27,7 @@ export default async function LocaleLayout({
   children,
   params: { locale },
 }: LocaleLayoutProps) {
-  let messages
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default
-  } catch (error) {
-    notFound()
-  }
+  const messages = await getMessages()
 
   return (
     <html lang={locale} data-theme="luxury">

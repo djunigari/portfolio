@@ -1,14 +1,9 @@
 import createIntlMiddleware from 'next-intl/middleware'
-import {
-  NextFetchEvent,
-  NextMiddleware,
-  NextRequest,
-  NextResponse,
-} from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { MiddlewareFactory } from './types'
 
-export const withNextIntl: MiddlewareFactory = (next: NextMiddleware) => {
-  return async (request: NextRequest, _next: NextFetchEvent) => {
+export const withNextIntl: MiddlewareFactory = () => {
+  return async (request: NextRequest) => {
     if (request.nextUrl.pathname.startsWith('/api')) {
       return NextResponse.next()
     }
@@ -16,7 +11,6 @@ export const withNextIntl: MiddlewareFactory = (next: NextMiddleware) => {
     const handleI18nRouting = createIntlMiddleware({
       locales: ['en', 'pt', 'jp'],
       defaultLocale: 'en',
-      localePrefix: 'always',
     })
 
     const response = handleI18nRouting(request)
