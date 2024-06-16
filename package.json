@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build && prisma db seed",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "preview-email": "email dev"
@@ -32,7 +32,7 @@
     "limiter": "^2.1.0",
     "moment": "^2.29.4",
     "next": "^13.4.4",
-    "next-intl": "^2.13.2",
+    "next-intl": "^2.22.3",
     "nextjs": "^0.0.3",
     "nodemailer": "^6.9.3",
     "postcss": "8.4.23",

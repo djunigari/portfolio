@@ -63,7 +63,7 @@ dependencies:
     specifier: ^13.4.4
     version: 13.5.6(react-dom@18.2.0)(react@18.2.0)
   next-intl:
-    specifier: ^2.13.2
+    specifier: ^2.22.3
     version: 2.22.3(next@13.5.6)(react@18.2.0)
   nextjs:
     specifier: ^0.0.3
