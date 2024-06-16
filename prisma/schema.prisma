@@ -5,101 +5,101 @@ generator client {
 //https://www.prisma.io/docs/guides/database/planetscale - setup
 //https://stackoverflow.com/questions/72746602/prisma-io-long-text-with-mysql/72746965 - String is var(191)
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
-model Employer{
-  id String @id @default(uuid())
-  language String @default("en")
-  name String
-  position String
-  location String
-  description String @db.Text
-  site String?
+model Employer {
+  id           String                  @id @default(uuid())
+  language     String                  @default("en")
+  name         String
+  position     String
+  location     String
+  description  String                  @db.Text
+  site         String?
   logoImageUrl String?
-  startAt DateTime 
-  endAt DateTime?
-  isItJob Boolean @default(true)
-  tecnologies TecnologiesOnEmployer[]
+  startAt      DateTime
+  endAt        DateTime?
+  isItJob      Boolean                 @default(true)
+  tecnologies  TecnologiesOnEmployer[]
 }
 
-model Project{
-  id String @id @default(uuid())
-  language String @default("en")
-  name String 
-  description String @db.Text
-  url String?
-  gitHubUrl String?
+model Project {
+  id          String                  @id @default(uuid())
+  language    String                  @default("en")
+  name        String
+  description String                  @db.Text
+  url         String?
+  gitHubUrl   String?
   tecnologies TecnologiesOnProjects[]
 }
 
-model Tecnology{
-  id String @id @default(uuid())
-  name String
-  iconUrl String
+model Tecnology {
+  id       String                  @id @default(uuid())
+  name     String
+  iconUrl  String
   projects TecnologiesOnProjects[]
   employer TecnologiesOnEmployer[]
 }
 
 model TecnologiesOnEmployer {
-  tecnology       Tecnology     @relation(fields: [tecnologyId], references: [id])
-  tecnologyId     String 
+  tecnology   Tecnology @relation(fields: [tecnologyId], references: [id])
+  tecnologyId String
 
   employer   Employer @relation(fields: [employerId], references: [id])
-  employerId String 
-  @@id([tecnologyId, employerId])
+  employerId String
 
+  @@id([tecnologyId, employerId])
   @@index([tecnologyId])
   @@index([employerId])
 }
 
 model TecnologiesOnProjects {
-  tecnology       Tecnology     @relation(fields: [tecnologyId], references: [id])
-  tecnologyId     String 
+  tecnology   Tecnology @relation(fields: [tecnologyId], references: [id])
+  tecnologyId String
 
   project   Project @relation(fields: [projectId], references: [id])
-  projectId String 
-  @@id([tecnologyId, projectId])
+  projectId String
 
+  @@id([tecnologyId, projectId])
   @@index([tecnologyId])
   @@index([projectId])
 }
 
 model Education {
-  id String @id @default(uuid())
-  language String @default("en")
-  name String
-  site String?
+  id           String    @id @default(uuid())
+  language     String    @default("en")
+  name         String
+  site         String?
   logoImageUrl String?
-  degree String
-  field String?
-  startAt DateTime
-  endAt DateTime?
+  degree       String
+  field        String?
+  startAt      DateTime
+  endAt        DateTime?
 }
 
-model Academy{
- id String @id @default(uuid()) 
- name String
- site String?
- courses Course[]
+model Academy {
+  id      String   @id @default(uuid())
+  name    String
+  site    String?
+  courses Course[]
 }
 
-model Course{
-  id String @id @default(uuid())
-  language String @default("en")
-  name String
-  startAt DateTime?
+model Course {
+  id          String    @id @default(uuid())
+  language    String    @default("en")
+  name        String
+  startAt     DateTime?
   completedAt DateTime
-  academyId String
-  academy Academy @relation(fields: [academyId], references: [id])
+  academyId   String
+  academy     Academy   @relation(fields: [academyId], references: [id])
 
   @@index([academyId])
 }
 
-model Certificate{
-  id String @id @default(uuid())
+model Certificate {
+  id   String  @id @default(uuid())
   name String
-  url String?
+  url  String?
 }
